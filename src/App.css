@@ -1,0 +1,72 @@
+@font-face {
+  font-family: font1;
+  src: url("/PPNeueMontreal-Regular.ttf");
+}
+
+@font-face {
+  font-family: font2;
+  src: url("/659dbdfd5a080be8d3483173_Satoshi-Variable.ttf");
+}
+ @font-face {
+  font-family: font4;
+  src: url("/CircularXXWeb-Book.ttf");
+}
+@font-face {
+  font-family: font3;
+  src: url("/659dbdfd5a080be8d348316e_PP\ Neue\ Machina\ Inktrap\ Medium.ttf");
+}
+@font-face {
+  font-family: font5;
+  src: url("/659dbdfd5a080be8d348316f_PPNeueMachina_\ Light.ttf");
+} 
+
+@font-face {
+  font-family: font6;
+  src: url("/new14.ttf");
+}
+
+@font-face {
+  font-family: font7;
+  src: url("/new2.ttf");
+}
+
+@font-face {
+  font-family: font8;
+  src: url("/new3.ttf");
+}
+
+.f6{
+  font-family: font6;
+}
+
+.f7{
+  font-family: font7;
+}
+
+.f8{
+  font-family: font8;
+}
+
+.f1{
+  font-family: font1;
+}
+.f2{
+  font-family: font2;
+}
+
+.f3{
+  font-family: font3;
+}
+.f4{
+  font-family: font4;
+}
+.f5{
+  font-family: font5;
+}
+.transi{
+  transition: all 0.5s ease-out;
+}
+
+.clipped{
+  clip-path: circle(var(--clip) at 50% 50%);
+}
