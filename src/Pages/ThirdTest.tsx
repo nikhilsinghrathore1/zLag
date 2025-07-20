@@ -1,11 +1,31 @@
 import gsap ,{ScrollTrigger} from 'gsap/all';
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { GoArrowUpRight } from "react-icons/go";
 import InsideAbout from '../components/InsideAbout';
 // import { infoContext } from '../context/InfoContext';
 
 
 const ThirdTest = () => {
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      // Already loaded
+      setLoaded(true);
+    } else {
+      // Wait for the load event
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
 
   // const {setState} = useContext(infoContext)
 
@@ -16,12 +36,17 @@ const thirdCont = useRef(null)
 const fourthCont = useRef(null)
 
 useEffect(() => {
+  if(loaded){
+
+  
   gsap.registerPlugin(ScrollTrigger)
+  
+  // Main container color change - starts when component comes into view
   gsap.to(mainCont.current,{
     scrollTrigger:{
       trigger:mainCont.current,
-      start:"-50px top",
-      end:"310px bottom",
+      start:"top bottom", // Start when top of element reaches bottom of viewport
+      end:"bottom top", // End when bottom of element reaches top of viewport
       scrub:5
     },
     backgroundColor:"#AEDEE0",
@@ -29,11 +54,13 @@ useEffect(() => {
     duration:1,
     // onStart:()=>setState("achievements")
   });
+
+  // First container animation - starts after component is in view
   gsap.to(firstCont.current,{
     scrollTrigger:{
-      trigger:mainCont.current,
-      start:"300px top",
-      end:"310px bottom",
+      trigger:firstCont.current,
+      start:"top 80%", // Start when top of element reaches 80% from top of viewport
+      end:"top 60%", // Quick transition
       scrub:1
     },
     width:"500px",
@@ -42,12 +69,12 @@ useEffect(() => {
     duration:0.1,
   });
 
-
+  // Second container animation
   gsap.to(secondCont.current,{
     scrollTrigger:{
-      trigger:mainCont.current,
-      start:"450px top",
-      end:"460px bottom",
+      trigger:secondCont.current,
+      start:"top 80%",
+      end:"top 60%",
       scrub:1
     },
     width:"500px",
@@ -56,12 +83,12 @@ useEffect(() => {
     duration:0.1,
   })
 
-
+  // Third container animation
   gsap.to(thirdCont.current,{
     scrollTrigger:{
-      trigger:mainCont.current,
-      start:"640px top",
-      end:"650px bottom",
+      trigger:thirdCont.current,
+      start:"top 80%",
+      end:"top 60%",
       scrub:1
     },
     width:"500px",
@@ -70,11 +97,12 @@ useEffect(() => {
     duration:0.1,
   })
 
+  // Fourth container animation
   gsap.to(fourthCont.current,{
     scrollTrigger:{
-      trigger:mainCont.current,
-      start:"900px top",
-      end:"905px bottom",
+      trigger:fourthCont.current,
+      start:"top 80%",
+      end:"top 60%",
       scrub:1
     },
     width:"500px",
@@ -82,7 +110,8 @@ useEffect(() => {
     color:"white",
     duration:0.1,
   })
-}, [])
+}
+}, [loaded])
 
 
   return (

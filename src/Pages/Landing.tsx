@@ -3,32 +3,28 @@
 import gsap, { ScrollTrigger } from 'gsap/all';
 import React, { useEffect, useRef, useState } from 'react'
 import Marquee from '../components/Marquee';
-// import { infoContext } from '../context/InfoContext';
-// import Loader from './Loader';
-// import img from "../../public/t3.jpg"
-// import img2 from "../../public/t4.png"
-// import Nav from './Nav';
-// import SecondTest from './SecondTest';
-
-// const image = [
-//   {
-//     img: img,
-//     first: "50% 50%",
-//     second: "50% 250%",
-//     third: "50% 450%",
-//     fourth: "50% 662%"
-//   },
-//   {
-//     img: img2,
-//     first: "50% 50%",
-//     second: "50% 250%",
-//     third: "50% 462%",
-//     fourth: "50% 672%"
-//   },
-// ]
 
 const Landing = () => {
-  // const {setState} = useContext(infoContext)
+
+  const [loaded, setloaded] = useState(false)
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setloaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      // Already loaded
+      setloaded(true);
+    } else {
+      // Wait for the load event
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
 
   let clip = 100
 
@@ -67,6 +63,9 @@ const Landing = () => {
   const [blurText3, setBlurText3] = useState("")
 
   useEffect(() => {
+    if(loaded){
+
+    
     gsap.registerPlugin(ScrollTrigger)
 
     const tl = gsap.timeline()
@@ -303,10 +302,18 @@ const Landing = () => {
       clearInterval(gameChangerInterval)
       clearInterval(overlayInterval)
     }
-  }, [])
+  }
+  }, [loaded])
 
   return (
     <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh] bg-[#1E1915]'>
+
+<div className={`${loaded ? 'hidden' : 'flex'} fixed inset-0 z-[100] bg-black bg-opacity-90 items-center justify-center`}>
+  <div className="flex flex-col items-center space-y-4">
+    <h1 className="text-white text-xl font-semibold tracking-wide animate-pulse">Loading...</h1>
+    <div className="w-10 h-10 border-[4px] border-t-transparent border-white rounded-full animate-spin"></div>
+  </div>
+</div>
       {/* <Nav/> */}
       {/* <Loader/> */}
       {/* main div to be clipped  */}

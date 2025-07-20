@@ -1,10 +1,31 @@
 import gsap from 'gsap';
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { GoArrowUpRight } from "react-icons/go";
 // import { infoContext } from '../context/InfoContext';
 import dashboardimg from "/slider4img.png"
 
 const Fourth = () => {
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      // Already loaded
+      setLoaded(true);
+    } else {
+      // Wait for the load event
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
 
 const MainDivRef = useRef(null)
 const SlidingWindow = useRef(null)
@@ -14,11 +35,13 @@ const firstcircle = useRef(null)
 
 
 useEffect(() => {
+  if(loaded){
 
-const tl = gsap.timeline({
-  scrollTrigger:{
-    trigger:MainDivRef.current,
-    start:"top top",
+    
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:MainDivRef.current,
+        start:"top top",
     end:"bottom bottom",
     pin:true,
     scrub:10,
@@ -33,7 +56,8 @@ tl.to(SlidingWindow.current,{
 tl.to(SlidingWindow.current,{
   delay:1,
 })
-}, [])
+}
+}, [loaded])
 
 
   return (
