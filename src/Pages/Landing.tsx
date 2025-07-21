@@ -335,6 +335,7 @@ const Landing = () => {
         <div className="relative w-full h-screen bg-gray-900 overflow-hidden">
       {/* Starry Background */}
       <div className="fixed inset-0 z-0">
+        {/* @ts-ignore */}
         <style jsx>{`
           @keyframes blink {
             0%, 50% { opacity: 0.6; }
