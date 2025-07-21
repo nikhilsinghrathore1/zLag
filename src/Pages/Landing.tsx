@@ -1,8 +1,18 @@
 // import { useGSAP } from '@gsap/react';
 // import {  motion } from 'framer-motion'
 import gsap, { ScrollTrigger } from 'gsap/all';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Marquee from '../components/Marquee';
+
+
+const generateStars = () => Array.from({ length: 150 }, (_, i) => ({
+  id: i,
+  left: Math.random() * 100,
+  top: Math.random() * 100,
+  size: Math.random() * 2 + 1,
+  animationDelay: Math.random() * 4,
+  animationDuration: Math.random() * 2 + 2
+}));
 
 const Landing = () => {
 
@@ -305,6 +315,8 @@ const Landing = () => {
   }
   }, [loaded])
 
+  const stars = useMemo(() => generateStars(), []);
+
   return (
     <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh] bg-[#1E1915]'>
 
@@ -320,64 +332,91 @@ const Landing = () => {
       <div ref={clipRef} style={{ clipPath: `circle(${clip + "%"} at 50% 50%)` }} className={`w-full ${"--clip:0%"} h-full overflow-hidden bg-black z-10 clipped absolute top-0`}>
 
         {/* this is the new unlock your motivation wala landing page  jai shree ghanesh*/}
-        <div className='relative w-full h-full bg-[#FFFAF9] px-12 py-[14px] text-[#4D5AD6]'>
-
-          {/* nav bar  */}
-          <div className='w-full tracking-wide f8 text-[9.5px] uppercase h-[58px] rounded-xl bg-[#F9F5F4] flex'>
-            {[1, 2, 3, 4, 5, 6].map((e, i) =>
-              <div key={i} className={`w-[16.71%] pl-[14px] h-full flex items-center ${e === 6 ? "" : "border-r-[1px] border-[#4D5AD6]"} `}>
-                {e === 6 ? 'Final' : `Chapter 0${e}`}
-              </div>
-            )}
-          </div>
-
-          {/* floating blue box */}
-          <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-[10.4%] right-[3%] w-[12.7%] h-[83px] bg-[#4D5AD6] text-white rounded-md'>
-            <div className='w-[58%] leading-[0.75rem]'>
-              <h1 ref={gameChangerTextRef}>
-                {typeof showSymbols === 'string' ? showSymbols : (showSymbols === false ? 'trust us, it\'s a game changer!' : '')}
-              </h1>
+        <div className="relative w-full h-screen bg-gray-900 overflow-hidden">
+      {/* Starry Background */}
+      <div className="fixed inset-0 z-0">
+        <style jsx>{`
+          @keyframes blink {
+            0%, 50% { opacity: 0.6; }
+            25% { opacity: 1; }
+            75% { opacity: 0.2; }
+          }
+        `}</style>
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute bg-white rounded-full"
+            style={{
+              left: `${star.left}%`,
+              top: `${star.top}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              animation: `blink ${star.animationDuration}s infinite`,
+              animationDelay: `${star.animationDelay}s`,
+              opacity: 0.6
+            }}
+          />
+        ))}
+      </div>
+      
+      <div className='relative w-full h-full bg-transparent px-12 py-[14px] text-green-400 z-10'>
+        {/* nav bar  */}
+        <div className='w-full tracking-wide f8 text-[9.5px] uppercase h-[58px] rounded-xl bg-gray-800/50 backdrop-blur-sm flex border border-gray-700'>
+          {[1, 2, 3, 4, 5, 6].map((e, i) =>
+            <div key={i} className={`w-[16.71%] pl-[14px] h-full flex items-center ${e === 6 ? "" : "border-r-[1px] border-green-400/30"} `}>
+              {e === 6 ? 'Final' : `Chapter 0${e}`}
             </div>
-
-            <div>
-              <svg width="9" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                <path d="M11.602 0L13.002 1.4L3.40195 11L12.002 11V13L0.00195312 13L0.00195313 1H2.00195L2.00195 9.6L11.602 0Z" fill="#FFFAF9"></path>
-              </svg>
-            </div>
-          </div>
-
-          {/* this is the moving behind main text */}
-          <div ref={mainTextRef} className='w-full uppercase pb-4 h-[84%] flex flex-col justify-end'>
-            <div ref={unlockTextRef} className='w-full f6 text-[8rem] leading-none text-right '>
-              <h1>unlock your</h1>
-            </div>
-            <div ref={productivityTextRef} className='w-full pr-[57px] f6 text-[8rem] leading-[9rem] text-right '>
-              <h1>productivity</h1>
-            </div>
-            <div ref={aiToolsTextRef} className='w-full pr-[85px] f6 text-[8rem] leading-[9.5rem] text-right '>
-              <h1>with<span className='f7 border-[5px] pt-1 rounded-full px-[45px] border-[#4D5AD6]'>zerolag..</span></h1>
-            </div>
-          </div>
-
-          {/* this is the floating opaque screen */}
-          <div ref={blurredDivRef} className='absolute uppercase text-[13px] w-[46.5%] f8 text-[#4D5AD6] h-[84%] shadow-2xl shadow-black/10 py-4 pl-3 pr-14 rounded-xl top-[10.4%] bg-[#F9F5F4]/10 backdrop-blur-md'>
-            <div className='w-full flex justify-between'>
-              <div className='w-[43%] leading-none'>
-                <p ref={blurParagraphRef1}>{blurText1 || "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."}</p>
-              </div>
-              <div className='w-[45%] leading-none '>
-                <p ref={blurParagraphRef2}>
-                  {blurText2 || "WHY USERS STICK TO ZEROLAG: DAILY COMMITMENT LOOP. LOSS AVERSION = MOTIVATION, FAILURE BURNS STAKE + BREAKS NFT STREAK."}
-                </p>
-              </div>
-            </div>
-
-            <div className='leading-none mt-9'>
-              <p ref={blurParagraphRef3}>{blurText3 || "ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete them to earn back your stake, dynamic NFTs, and $ZLAG rewards. Fail, and your stake is burned. Powered by AI, ZeroLag gamifies habit-building with real financial accountability."}</p>
-            </div>
-          </div>
-
+          )}
         </div>
+        
+        {/* floating blue box */}
+        <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-[10.4%] right-[3%] w-[12.7%] h-[83px] bg-green-600 text-white rounded-md shadow-lg shadow-green-500/20'>
+          <div className='w-[58%] leading-[0.75rem]'>
+            <h1 ref={gameChangerTextRef}>
+              {typeof showSymbols === 'string' ? showSymbols : (showSymbols === false ? 'trust us, it\'s a game changer!' : '')}
+            </h1>
+          </div>
+          
+          <div>
+            <svg width="9" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <path d="M11.602 0L13.002 1.4L3.40195 11L12.002 11V13L0.00195312 13L0.00195313 1H2.00195L2.00195 9.6L11.602 0Z" fill="#111827"></path>
+            </svg>
+          </div>
+        </div>
+        
+        {/* this is the moving behind main text */}
+        <div ref={mainTextRef} className='w-full uppercase pb-4 h-[84%] flex flex-col justify-end'>
+          <div ref={unlockTextRef} className='w-full f6 text-[8rem] leading-none text-right text-white'>
+            <h1>unlock your</h1>
+          </div>
+          <div ref={productivityTextRef} className='w-full pr-[57px] f6 text-[8rem] leading-[9rem] text-right text-white'>
+            <h1>productivity</h1>
+          </div>
+          <div ref={aiToolsTextRef} className='w-full pr-[85px] f6 text-[8rem] leading-[9.5rem] text-right text-white'>
+            <h1>with<span className='f7 border-[5px] pt-1 rounded-full px-[45px] border-green-400 text-green-400'>zerolag..</span></h1>
+          </div>
+        </div>
+        
+        {/* this is the floating opaque screen */}
+        <div ref={blurredDivRef} className='absolute uppercase text-[13px] w-[46.5%] f8 text-green-300 h-[84%] shadow-2xl shadow-black/30 py-4 pl-3 pr-14 rounded-xl top-[10.4%] bg-gray-800/20 backdrop-blur-md border border-gray-700/30'>
+          <div className='w-full flex justify-between'>
+            <div className='w-[43%] leading-none'>
+              <p ref={blurParagraphRef1}>{blurText1 || "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."}</p>
+            </div>
+            <div className='w-[45%] leading-none '>
+              <p ref={blurParagraphRef2}>
+                {blurText2 || "WHY USERS STICK TO ZEROLAG: DAILY COMMITMENT LOOP. LOSS AVERSION = MOTIVATION, FAILURE BURNS STAKE + BREAKS NFT STREAK."}
+              </p>
+            </div>
+          </div>
+          
+          <div className='leading-none mt-9'>
+            <p ref={blurParagraphRef3}>{blurText3 || "ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete them to earn back your stake, dynamic NFTs, and $ZLAG rewards. Fail, and your stake is burned. Powered by AI, ZeroLag gamifies habit-building with real financial accountability."}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
       </div>
 
