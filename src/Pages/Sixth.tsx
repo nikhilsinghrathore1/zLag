@@ -1,7 +1,6 @@
 import gsap from 'gsap/all'
 import React, { useEffect, useRef, useState } from 'react'
 // Image referenced directly from public folder
-const img = "/zlag_token.png"
 
 const Sixth = () => {
   const MaintextDiv = useRef(null)
