@@ -543,32 +543,6 @@ const Landing = () => {
             }}
           />
         </div>
-        
-        {/* Additional glow effects */}
-        <div className="absolute inset-0">
-          <img 
-            src="/zlag_token.png"
-            alt="ZLAG Token"
-            className="absolute w-96 h-96 object-contain opacity-80"
-            style={{
-              top: '10%',
-              left: '10%',
-              animation: 'glow 8s ease-in-out infinite',
-              filter: 'drop-shadow(0 0 20px rgba(108, 61, 211, 0.5))'
-            }}
-          />
-          <img 
-            src="/timer-icon.png"
-            alt="Timer Icon"
-            className="absolute w-80 h-80 object-contain opacity-80"
-            style={{
-              top: '50%',
-              right: '10%',
-              animation: 'glow 12s ease-in-out infinite reverse',
-              filter: 'drop-shadow(0 0 20px rgba(20, 184, 166, 0.5))'
-            }}
-          />
-        </div>
       </div>
       
       <div className='relative w-full h-full bg-transparent px-12 py-[14px] text-green-400 z-10'>
