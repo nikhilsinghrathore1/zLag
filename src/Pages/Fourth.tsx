@@ -2,7 +2,8 @@ import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 import { GoArrowUpRight } from "react-icons/go";
 // import { infoContext } from '../context/InfoContext';
-import dashboardimg from "/slider4img.png"
+// Image referenced directly from public folder
+const dashboardimg = "/slider4img.png"
 
 const Fourth = () => {
 

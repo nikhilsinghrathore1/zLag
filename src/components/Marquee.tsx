@@ -1,8 +1,9 @@
 import React from 'react'
-import img1 from "/m1.jpeg"
-import img2 from "/marqueimg1.png"
-import img3 from "/marqueimg2.png"
-import img4 from "/marqueimg3.jpg"
+// Images referenced directly from public folder
+const img1 = "/m1.jpeg"
+const img2 = "/marqueimg1.png"
+const img3 = "/marqueimg2.png"
+const img4 = "/marqueimg3.jpg"
 
 type marqueprop ={
                text:String[]

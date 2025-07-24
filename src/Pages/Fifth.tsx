@@ -1,12 +1,13 @@
 import gsap from "gsap"
 import React, { useEffect, useRef } from 'react'
 import InsideImage from '../components/InsideImage'
-import img1 from "/marqueimg1.jpg"
-import img2 from "/Spark.jpg"
-import img3 from "/Flamee.jpg"
-import img4 from "/inferno.jpg"
-import img5 from "/blazee.jpg"
-// import img5 from "/Ascendant.jpg"
+// Images are referenced directly from public folder
+const marqueImg = "/marqueimg1.jpg"
+const sparkImg = "/Spark.jpg"
+const flameImg = "/Flamee.jpg"
+const infernoImg = "/inferno.jpg"
+const blazeImg = "/blazee.jpg"
+// const ascendantImg = "/Ascendant.jpg"
 
 const Fifth = () => {
 
@@ -218,7 +219,7 @@ useEffect(() => {
                                              <InsideImage ind={"3 days"} text={"Spark NFT"} post={"common"}/>
                   <div className='w-full h-0 transition-all bg-blue-500 absolute  z-[0] top-0 left-0'></div>
                   <div ref={firstcir} className='w-[14rem] opacity-0  picture h-[14rem] rounded-full overflow-hidden  absolute z-[1] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                     <img className="w-full h-full object-cover" src={img2} alt="not showing" />
+                     <img className="w-full h-full object-cover" src={sparkImg} alt="not showing" />
                   </div>
 
                </div>
@@ -230,7 +231,7 @@ useEffect(() => {
                                              <InsideImage ind={"7 days"} text={"Ember NFT"} post={"uncommon"}/>
                                              <div className='w-full h-0 transition-all bg-blue-500 absolute  z-[0] top-0 left-0'></div>
                   <div ref={secondcir} className='w-[14rem] picture opacity-0  h-[14rem] rounded-full  overflow-hidden absolute z-[1] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                     <img className="w-full h-full object-cover" src={img1} alt="not showing" />
+                     <img className="w-full h-full object-cover" src={marqueImg} alt="not showing" />
                   </div>
 
                </div>
@@ -242,7 +243,7 @@ useEffect(() => {
                                              <InsideImage ind={"14 days"} text={"Flame NFT"} post={"rare"} />
                                              <div className='w-full h-0 transition-all bg-blue-500 absolute  z-[0] top-0 left-0'></div>
                   <div ref={thirdcir} className='w-[14rem] h-[14rem] picture opacity-0  peer-hover:hidden rounded-full overflow-hidden absolute z-[1] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                     <img className="w-full h-full object-cover" src={img3} alt="not showing" />
+                     <img className="w-full h-full object-cover" src={flameImg} alt="not showing" />
                   </div>
 
                </div>
@@ -254,7 +255,7 @@ useEffect(() => {
                                              <InsideImage ind={"30 days"} text={"Blaze NFT"} post={"Epic"} />
                                              <div className='w-full h-0 transition-all bg-blue-500 absolute  z-[0] top-0 left-0'></div>
                   <div ref={fourthcir} className='w-[14rem] picture h-[14rem] opacity-0  rounded-full overflow-hidden absolute z-[1] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                     <img className="w-full h-full object-cover" src={img5} alt="not showing" />
+                     <img className="w-full h-full object-cover" src={blazeImg} alt="not showing" />
                   </div>
 
                </div>
@@ -266,7 +267,7 @@ useEffect(() => {
                                              <InsideImage ind={"60+days"} text={"inferno NFT"} post={"Legendary"} />
                                              <div className='w-full h-0 transition-all bg-blue-500 absolute  z-[0] top-0 left-0'></div>
                   <div ref={fifthcir} className='w-[14rem] picture h-[14rem] opacity-0  rounded-full overflow-hidden absolute z-[1] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                     <img className="w-full h-full object-cover" src={img4} alt="not showing" />
+                     <img className="w-full h-full object-cover" src={infernoImg} alt="not showing" />
                   </div>
 
                </div>
