@@ -2,11 +2,20 @@ import gsap from "gsap"
 import React, { useEffect, useRef } from 'react'
 import InsideImage from '../components/InsideImage'
 // Images are referenced directly from public folder
-const marqueImg = "/marqueimg1.jpg"
-const sparkImg = "/Spark.jpg"
-const flameImg = "/Flamee.jpg"
-const infernoImg = "/inferno.jpg"
-const blazeImg = "/blazee.jpg"
+// const marqueImg = "/marqueimg1.jpg"
+// const sparkImg = "/Spark.jpg"
+// const flameImg = "/Flamee.jpg"
+// const infernoImg = "/inferno.jpg"
+// const blazeImg = "/blazee.jpg"
+
+import marqueImg from '/marqueimg1.jpg';
+import sparkImg from '/Spark.jpg';
+import flameImg from '/Flamee.jpg';
+import infernoImg from '/inferno.jpg';
+import blazeImg from '/blazee.jpg';
+
+
+
 // const ascendantImg = "/Ascendant.jpg"
 
 const Fifth = () => {
