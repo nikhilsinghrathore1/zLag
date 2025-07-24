@@ -8,11 +8,11 @@ import InsideImage from '../components/InsideImage'
 // const infernoImg = "/inferno.jpg"
 // const blazeImg = "/blazee.jpg"
 
-import marqueImg from '/marqueimg1.jpg';
-import sparkImg from '/Spark.jpg';
-import flameImg from '/Flamee.jpg';
-import infernoImg from '/inferno.jpg';
-import blazeImg from '/blazee.jpg';
+import marqueImg from '../../public/marqueimg1.jpg';
+import sparkImg from '../../public/Spark.jpg';
+import flameImg from '../../public/Flamee.jpg';
+import infernoImg from '../../public/inferno.jpg';
+import blazeImg from '../../public/blazee.jpg';
 
 
 
