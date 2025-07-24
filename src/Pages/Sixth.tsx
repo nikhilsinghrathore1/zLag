@@ -46,10 +46,10 @@ const Sixth = () => {
   return (
     <>
       <div ref={MaintextDiv} className='w-full flex flex-col items-center relative justify-start min-h-[100vh] overflow-hidden' style={{
-        backgroundImage: 'url("/cosmic-nebula.jpg"), linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 5%, rgba(15, 52, 96, 0.7) 10%, rgba(10, 6, 36, 0.8) 15%, rgba(22, 33, 62, 0.7) 25%, rgba(15, 52, 96, 0.6) 35%, rgba(26, 26, 46, 0.7) 45%, rgba(42, 42, 78, 0.8) 55%, rgba(26, 26, 46, 0.7) 65%, rgba(15, 52, 96, 0.6) 75%, rgba(22, 33, 62, 0.7) 85%, rgba(26, 26, 46, 0.6) 92%, rgba(26, 26, 46, 0.3) 96%, rgba(5, 1, 10, 0) 100%)',
+        backgroundImage: 'url("/hell.jpg"), linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 5%, rgba(15, 52, 96, 0.7) 10%, rgba(10, 6, 36, 0.8) 15%, rgba(22, 33, 62, 0.7) 25%, rgba(15, 52, 96, 0.6) 35%, rgba(26, 26, 46, 0.7) 45%, rgba(42, 42, 78, 0.8) 55%, rgba(26, 26, 46, 0.7) 65%, rgba(15, 52, 96, 0.6) 75%, rgba(22, 33, 62, 0.7) 85%, rgba(26, 26, 46, 0.6) 92%, rgba(26, 26, 46, 0.3) 96%, rgba(5, 1, 10, 0) 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
       }}>
         {/* Cosmic background effects */}
         <div className="absolute inset-0 overflow-hidden">
@@ -113,21 +113,11 @@ const Sixth = () => {
           }
         })}</p>
 
-        <div className=' flex flex-col items-center mt-16 gap-1 justify-center relative z-10 pb-20'>
-          <div className='w-[6rem] overflow-hidden h-[6rem] rounded-full'>
-            <img src={img} alt="not showing " />
-          </div>
-          <p className='text-[1.2rem] f4 mt-2 text-white' style={{
-            textShadow: '0 0 10px rgba(108, 61, 211, 0.5)'
-          }}>Zero_lag</p>
-          <p className='text-[14px] font-semibold -mt-[7px] f2 text-white/80'>World's first AI Disciplinary Dapp</p>
-        </div>
-
       </div>
 
-      {/* Cosmic Footer */}
-      <footer className='w-full relative overflow-hidden' style={{
-        backgroundImage: 'url("/cosmic-nebula.jpg"), linear-gradient(180deg, rgba(5, 1, 10, 0) 0%, rgba(10, 6, 36, 0.8) 15%, #0A0624 30%, #16213e 50%, #0f3460 70%, #1a1a2e 85%, #2a2a4e 100%)',
+      {/* Enhanced Cosmic Footer */}
+      <footer className='w-full relative overflow-hidden py-20' style={{
+        backgroundImage: 'url("/cosmic-nebula.jpg"), linear-gradient(180deg, rgba(5, 1, 10, 0) 0%, rgba(10, 6, 36, 0.9) 10%, #0A0624 25%, #16213e 45%, #0f3460 65%, #1a1a2e 80%, #2a2a4e 95%, #000000 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -144,130 +134,108 @@ const Sixth = () => {
             }}
           />
           <div 
-            className="absolute w-80 h-80 bg-cyan-300/5 rounded-full"
+            className="absolute w-[250%] h-16 bg-gradient-to-r from-transparent via-purple-400/8 to-transparent"
             style={{
-              top: '20%',
-              right: '15%',
-              animation: 'cosmicGlow 20s ease-in-out infinite',
+              top: '70%',
+              right: '-80%',
+              animation: 'cosmicFlow 35s ease-in-out infinite reverse',
+              borderRadius: '50%'
             }}
           />
         </div>
-        
-        <div className='relative z-10 py-12 px-14 backdrop-blur-lg' style={{
-          background: 'rgba(10, 6, 36, 0.3)',
-          borderRadius: '20px 20px 0 0',
-          boxShadow: '0 -20px 40px rgba(20, 184, 166, 0.1), 0 -10px 20px rgba(108, 61, 211, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-          border: '1px solid rgba(20, 184, 166, 0.2)',
-          borderBottom: 'none',
-          transform: 'translateY(-10px)'
-        }}>
+
+        <div className='max-w-7xl mx-auto px-8 relative z-10'>
           {/* Main Footer Content */}
-          <div className='flex justify-between items-start mb-8'>
-            {/* Left Side - Logo and Branding */}
-            <div className='flex flex-col max-w-md backdrop-blur-sm p-4 rounded-lg' style={{
-              background: 'rgba(22, 33, 62, 0.3)',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              border: '1px solid rgba(20, 184, 166, 0.2)'
-            }}>
-              <div className='flex items-center gap-3 mb-3'>
-                <div className='w-10 h-10 overflow-hidden rounded-full'>
-                  <img src={img} alt="ZeroLag Logo" className='w-full h-full object-cover' />
-                </div>
-                <h2 className='text-xl font-bold text-teal-200 f5' style={{
-                  textShadow: '0 0 15px rgba(108, 61, 211, 0.8), 0 0 25px rgba(20, 184, 166, 0.4)'
-                }}>ZeroLag</h2>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-12 mb-16'>
+            {/* Brand Section */}
+            <div className='md:col-span-1'>
+              <h2 className='text-2xl font-bold text-white mb-4 f4' style={{
+                textShadow: '0 0 20px rgba(108, 61, 211, 0.6)'
+              }}>ZeroLag</h2>
+              <p className='text-cyan-200/80 text-sm f2 leading-relaxed mb-6'>
+                Discipline is the new currency of success. Transform your daily habits into valuable assets with Web3-powered accountability.
+              </p>
+              {/* Social Links */}
+              <div className='flex space-x-4'>
+                <a href='#' className='w-10 h-10 bg-gradient-to-r from-teal-400/20 to-purple-400/20 rounded-full flex items-center justify-center border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                  <span className='text-teal-400 text-sm'>𝕏</span>
+                </a>
+                <a href='#' className='w-10 h-10 bg-gradient-to-r from-teal-400/20 to-purple-400/20 rounded-full flex items-center justify-center border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                  <span className='text-teal-400 text-sm'>📱</span>
+                </a>
+                <a href='#' className='w-10 h-10 bg-gradient-to-r from-teal-400/20 to-purple-400/20 rounded-full flex items-center justify-center border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                  <span className='text-teal-400 text-sm'>💬</span>
+                </a>
               </div>
-              <p className='text-sm text-cyan-200 f2 mb-2'>World's first AI Disciplinary Dapp</p>
-              <p className='text-xs text-purple-200/80 f2 leading-relaxed'>Discipline is the new currency of success. Transform your habits into valuable assets with real crypto stakes.</p>
             </div>
-            
-            {/* Right Side - Navigation Links */}
-            <div className='grid grid-cols-4 gap-8 text-cyan-200/80 backdrop-blur-sm p-6 rounded-lg' style={{
-              background: 'rgba(15, 52, 96, 0.2)',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(34, 211, 238, 0.2)'
-            }}>
-              <div>
-                <h3 className='text-teal-200 font-semibold mb-3 text-sm f4'>Platform</h3>
-                <ul className='space-y-2 text-xs f2'>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>How it Works</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>NFT Rewards</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>$ZLAG Token</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Staking</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className='text-teal-200 font-semibold mb-3 text-sm f4'>Community</h3>
-                <ul className='space-y-2 text-xs f2'>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Discord</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Twitter</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Telegram</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Reddit</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className='text-teal-200 font-semibold mb-3 text-sm f4'>Resources</h3>
-                <ul className='space-y-2 text-xs f2'>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Whitepaper</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Documentation</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>API</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Support</a></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className='text-teal-200 font-semibold mb-3 text-sm f4'>Legal</h3>
-                <ul className='space-y-2 text-xs f2'>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Privacy Policy</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Terms of Use</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Cookie Policy</a></li>
-                  <li><a href='#' className='hover:text-teal-400 transition-colors'>Contact</a></li>
-                </ul>
-              </div>
+
+            {/* Platform Links */}
+            <div>
+              <h3 className='text-teal-200 font-semibold mb-6 text-lg f4' style={{
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+              }}>Platform</h3>
+              <ul className='space-y-3 text-sm f2'>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>How it Works</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>NFT Rewards</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>$ZLAG Token</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Staking System</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>AI Verification</a></li>
+              </ul>
+            </div>
+
+            {/* Community Links */}
+            <div>
+              <h3 className='text-teal-200 font-semibold mb-6 text-lg f4' style={{
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+              }}>Community</h3>
+              <ul className='space-y-3 text-sm f2'>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Discord</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Telegram</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Twitter</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Medium</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>GitHub</a></li>
+              </ul>
+            </div>
+
+            {/* Resources Links */}
+            <div>
+              <h3 className='text-teal-200 font-semibold mb-6 text-lg f4' style={{
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+              }}>Resources</h3>
+              <ul className='space-y-3 text-sm f2'>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Documentation</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Whitepaper</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Roadmap</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Privacy Policy</a></li>
+                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Terms of Service</a></li>
+              </ul>
             </div>
           </div>
-          
-          {/* Bottom Section */}
-          <div className='border-t border-teal-400/30 pt-6 flex justify-between items-center backdrop-blur-md p-4 rounded-lg mt-4' style={{
-            background: 'rgba(26, 26, 46, 0.4)',
-            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 8px rgba(20, 184, 166, 0.1)',
-            border: '1px solid rgba(108, 61, 211, 0.3)'
-          }}>
-            <div className='flex flex-col'>
-              <p className='text-cyan-200/70 text-xs f2'>© 2024 ZeroLag. All rights reserved.</p>
-              <p className='text-purple-200/60 text-xs f2 mt-1' style={{
+
+          {/* Divider */}
+          <div className='w-full h-px bg-gradient-to-r from-transparent via-teal-400/30 to-transparent mb-8'></div>
+
+          {/* Bottom Footer */}
+          <div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
+            <div className='flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-8'>
+              <p className='text-cyan-200/70 text-sm f2'>© 2024 ZeroLag. All rights reserved.</p>
+              <p className='text-purple-200/60 text-sm f2' style={{
                 textShadow: '0 0 8px rgba(255, 79, 216, 0.3)'
-              }}>"Destiny build destiny" - Fuel your flame, earn your chain</p>
+              }}>"Fuel your flame, earn your chain"</p>
             </div>
-            <div className='flex gap-3'>
-              <div className='w-10 h-10 rounded-full bg-teal-400/30 backdrop-blur-md flex items-center justify-center hover:bg-teal-400/50 transition-all cursor-pointer border border-teal-400/40 hover:scale-110' style={{
-                boxShadow: '0 6px 20px rgba(20, 184, 166, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2)',
-                transform: 'translateZ(10px)'
-              }}>
-                <span className='text-teal-100 text-base font-semibold' style={{
-                  textShadow: '0 0 8px rgba(20, 184, 166, 0.8)'
-                }}>𝕏</span>
-              </div>
-              <div className='w-10 h-10 rounded-full bg-purple-400/30 backdrop-blur-md flex items-center justify-center hover:bg-purple-400/50 transition-all cursor-pointer border border-purple-400/40 hover:scale-110' style={{
-                boxShadow: '0 6px 20px rgba(168, 85, 247, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2)',
-                transform: 'translateZ(10px)'
-              }}>
-                <span className='text-purple-100 text-base' style={{
-                  textShadow: '0 0 8px rgba(168, 85, 247, 0.8)'
-                }}>💬</span>
-              </div>
-              <div className='w-10 h-10 rounded-full bg-cyan-400/30 backdrop-blur-md flex items-center justify-center hover:bg-cyan-400/50 transition-all cursor-pointer border border-cyan-400/40 hover:scale-110' style={{
-                boxShadow: '0 6px 20px rgba(34, 211, 238, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2)',
-                transform: 'translateZ(10px)'
-              }}>
-                <span className='text-cyan-100 text-base' style={{
-                  textShadow: '0 0 8px rgba(34, 211, 238, 0.8)'
-                }}>📱</span>
-              </div>
+            <div className='text-cyan-200/60 text-sm f2'>
+              <span>Built on </span>
+              <span className='text-teal-400 font-semibold'>Web3</span>
+              <span> • Powered by </span>
+              <span className='text-purple-400 font-semibold'>AI</span>
             </div>
           </div>
         </div>
+
+        {/* Cosmic glow effects */}
+        <div className='absolute bottom-0 left-1/4 w-32 h-32 bg-teal-400/5 rounded-full blur-3xl'></div>
+        <div className='absolute top-1/2 right-1/4 w-24 h-24 bg-purple-400/5 rounded-full blur-2xl'></div>
       </footer>
-     
     </>
   )
 }
