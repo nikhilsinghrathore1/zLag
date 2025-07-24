@@ -116,17 +116,32 @@ useEffect(() => {
 
   return (
     <div className='w-[100vw] '>
-    <div ref={mainCont} className='w-full  h-[270vh] justify-between bg-[#000]  flex items-start px-12'>
-               <div  className='w-[41.9%] h-[45%]  pt-20 sticky top-0'>
-                           <p className='f4 text-[1.14rem] font-normal tracking-tight leading-[1.78rem]'>ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete tasks to unlock funds, earn dynamic NFTs and $ZLAG rewards. Miss them, and your locked crypto is burned, driving real accountability.</p>
+    <div ref={mainCont} className='w-full  h-[270vh] justify-between bg-[#000] relative flex items-start px-12'>
+        {/* Background Video */}
+        <video 
+          className='absolute top-0 left-0 w-full h-full object-cover z-0'
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src="../web.mp4" type="video/mp4" />
+          {/* Fallback for browsers that don't support video */}
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Dark overlay for better text readability */}
+        <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10'></div>
+               <div  className='w-[41.9%] h-[45%]  pt-20 sticky top-0 relative z-20'>
+                           <p className='f4 text-[1.14rem] font-bold tracking-tight leading-[1.78rem] text-white'>ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete tasks to unlock funds, earn dynamic NFTs and $ZLAG rewards. Miss them, and your locked crypto is burned, driving real accountability.</p>
 
-                           <h1 className='f5 text-[3.3rem] mt-5 leading-[4rem]'>Web3-Discipline AI Driven Growth</h1>
+                           <h1 className='f5 text-[3.3rem] mt-5 leading-[4rem] font-bold text-white'>Web3-Discipline AI Driven Growth</h1>
 
-                           <div className='w-[38%] h-[60px] mt-5 border border-black font-semibold uppercase flex items-center gap-2 text-[15px]  f4 justify-center'>
+                           <div className='w-[38%] h-[60px] mt-5 border border-white font-bold uppercase flex items-center gap-2 text-[15px] f4 justify-center text-white bg-black bg-opacity-20 hover:bg-opacity-40 transition-all duration-300'>
                               <h1 className='flex items-center gap-2'>our Solutions <GoArrowUpRight className='text-[1.2rem] '/></h1>
                            </div>
                </div>
-               <div className='w-[50%]   h-full pt-[85vh] pl-12'>
+               <div className='w-[50%]   h-full pt-[85vh] pl-12 relative z-20'>
                               <div ref={firstCont} className=' w-[460px] origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-black h-[15.5%]'>
                                             <InsideAbout mainText={"Commit & lock crypto"} para={"The user selects a task, connects their Web3 wallet, and locks a chosen amount of $ZLAG tokens as collateral in a smart contract."} svg={<svg width="100%" height="38%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path opacity="0.2" d="M45.9998 10H31.9998L19.7271 26L31.9998 56L59.9998 26L45.9998 10Z" fill="currentColor"></path>

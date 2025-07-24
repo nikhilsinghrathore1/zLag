@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        '15': '15',
+        '25': '25',
+      }
+    },
   },
   plugins: [],
 }

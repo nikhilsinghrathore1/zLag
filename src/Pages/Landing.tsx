@@ -1,18 +1,18 @@
 // import { useGSAP } from '@gsap/react';
 // import {  motion } from 'framer-motion'
 import gsap, { ScrollTrigger } from 'gsap/all';
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Marquee from '../components/Marquee';
 
 
-const generateStars = () => Array.from({ length: 150 }, (_, i) => ({
-  id: i,
-  left: Math.random() * 100,
-  top: Math.random() * 100,
-  size: Math.random() * 2 + 1,
-  animationDelay: Math.random() * 4,
-  animationDuration: Math.random() * 2 + 2
-}));
+// const generateStars = () => Array.from({ length: 150 }, (_, i) => ({
+//   id: i,
+//   left: Math.random() * 100,
+//   top: Math.random() * 100,
+//   size: Math.random() * 2 + 1,
+//   animationDelay: Math.random() * 4,
+//   animationDuration: Math.random() * 2 + 2
+// }));
 
 const Landing = () => {
 
@@ -100,7 +100,7 @@ const Landing = () => {
       x: "-100%",
       duration: 2,
     }, "leftMove")
-    // Add subtle movement for individual text elements
+    // Add subtle movehttp://localhost:5173/ment for individual text elements
     .to(unlockTextRef.current, {
       x: "-3%",
       duration: 2,
@@ -290,7 +290,7 @@ const Landing = () => {
 
     // Initialize blur text animations (run only once)
     const text1 = "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."
-    const text2 = "WHY USERS STICK TO ZEROLAG: DAILY COMMITMENT LOOP. LOSS AVERSION = MOTIVATION, FAILURE BURNS STAKE + BREAKS NFT STREAK."
+    const text2 = "WHY ZEROLAG? Break free from procrastination. Our daily commitment loop, powered by real crypto stakes and loss aversion, guarantees motivation. Missed tasks burn crypto; completed ones earn rewards and NFTs, turning discipline into powerful, lasting habits."
     const text3 = "ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete them to earn back your stake, dynamic NFTs, and $ZLAG rewards. Fail, and your stake is burned. Powered by AI, ZeroLag gamifies habit-building with real financial accountability."
 
     // Start animations with delays
@@ -315,10 +315,10 @@ const Landing = () => {
   }
   }, [loaded])
 
-  const stars = useMemo(() => generateStars(), []);
+  // const stars = useMemo(() => generateStars(), []);
 
   return (
-    <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh] bg-[#1E1915]'>
+    <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh] bg-gradient-to-br from-gray-900 via-black to-gray-800'>
 
 <div className={`${loaded ? 'hidden' : 'flex'} fixed inset-0 z-[100] bg-black bg-opacity-90 items-center justify-center`}>
   <div className="flex flex-col items-center space-y-4">
@@ -329,35 +329,246 @@ const Landing = () => {
       {/* <Nav/> */}
       {/* <Loader/> */}
       {/* main div to be clipped  */}
-      <div ref={clipRef} style={{ clipPath: `circle(${clip + "%"} at 50% 50%)` }} className={`w-full ${"--clip:0%"} h-full overflow-hidden bg-black z-10 clipped absolute top-0`}>
-
-        {/* this is the new unlock your motivation wala landing page  jai shree ghanesh*/}
-        <div className="relative w-full h-screen bg-gray-900 overflow-hidden">
-      {/* Starry Background */}
-      <div className="fixed inset-0 z-0">
-        {/* @ts-ignore */}
-        <style jsx>{`
-          @keyframes blink {
-            0%, 50% { opacity: 0.6; }
-            25% { opacity: 1; }
-            75% { opacity: 0.2; }
-          }
-        `}</style>
-        {stars.map((star) => (
-          <div
-            key={star.id}
-            className="absolute bg-white rounded-full"
+      <div ref={clipRef} className={`w-full ${"--clip:0%"} h-full overflow-hidden z-20 clipped absolute top-0`} 
+        style={{
+          clipPath: `circle(${clip + "%"} at 50% 50%)`,
+          background: `
+            radial-gradient(circle at center, 
+              rgba(45, 27, 105, 0.9) 0%, 
+              rgba(26, 14, 61, 0.8) 30%, 
+              rgba(15, 6, 36, 0.7) 60%, 
+              rgba(10, 6, 36, 0.9) 100%
+            ),
+            conic-gradient(from 0deg at 50% 50%, 
+              rgba(108, 61, 211, 0.8) 0deg, 
+              rgba(20, 184, 166, 0.8) 72deg, 
+              rgba(255, 79, 216, 0.8) 144deg, 
+              rgba(20, 184, 166, 0.8) 216deg, 
+              rgba(108, 61, 211, 0.8) 288deg, 
+              rgba(20, 184, 166, 0.8) 360deg
+            )
+          `,
+          backgroundSize: '100% 100%, 200% 200%',
+          backgroundPosition: 'center, center',
+          animation: 'arcadeGlow 4s ease-in-out infinite',
+          filter: 'drop-shadow(0 0 30px rgba(20, 184, 166, 0.5)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.4))'
+        }}>
+        
+        {/* ZeroLag Images Overlay - positioned to replace red circle sections */}
+        <div className="absolute inset-0">
+          {/* ZLAG Token - Top Right */}
+          <img 
+            src="/zlag_token.png"
+            alt="ZLAG Token"
+            className="absolute w-32 h-32 object-contain opacity-90"
             style={{
-              left: `${star.left}%`,
-              top: `${star.top}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              animation: `blink ${star.animationDuration}s infinite`,
-              animationDelay: `${star.animationDelay}s`,
-              opacity: 0.6
+              top: '10%',
+              right: '15%',
+              filter: 'drop-shadow(0 0 15px rgba(108, 61, 211, 0.8))',
+              animation: 'pulseGlow 3s ease-in-out infinite'
             }}
           />
-        ))}
+          
+          {/* Timer Icon - Left Side */}
+          <img 
+            src="/timer-icon.png"
+            alt="Timer Icon"
+            className="absolute w-28 h-28 object-contain opacity-85"
+            style={{
+              top: '25%',
+              left: '10%',
+              filter: 'drop-shadow(0 0 15px rgba(20, 184, 166, 0.8))',
+              animation: 'pulseGlow 4s ease-in-out infinite reverse'
+            }}
+          />
+          
+          {/* Lock Icon - Bottom Right */}
+          <img 
+            src="/lock-icon.png"
+            alt="Lock Icon"
+            className="absolute w-30 h-30 object-contain opacity-80"
+            style={{
+              bottom: '15%',
+              right: '20%',
+              filter: 'drop-shadow(0 0 15px rgba(255, 79, 216, 0.8))',
+              animation: 'pulseGlow 3.5s ease-in-out infinite'
+            }}
+          />
+          
+          {/* Additional ZLAG Token - Bottom Left */}
+          <img 
+            src="/zlag_token.png"
+            alt="ZLAG Token"
+            className="absolute w-24 h-24 object-contain opacity-75"
+            style={{
+              bottom: '20%',
+              left: '15%',
+              filter: 'drop-shadow(0 0 12px rgba(108, 61, 211, 0.6))',
+              animation: 'pulseGlow 5s ease-in-out infinite reverse'
+            }}
+          />
+        </div>
+        
+        {/* Arcade Machine Visual Elements */}
+        <div className='absolute inset-0 flex items-center justify-center'>
+          {/* Main Arcade Body */}
+          <div className='relative' style={{
+            width: '200px',
+            height: '280px',
+            background: 'linear-gradient(145deg, #2d1b69 0%, #1a0e3d 50%, #0f0624 100%)',
+            borderRadius: '25px 25px 15px 15px',
+            border: '3px solid rgba(20, 184, 166, 0.4)',
+            boxShadow: `
+              0 0 30px rgba(168, 85, 247, 0.6),
+              inset 0 3px 0 rgba(255, 255, 255, 0.1),
+              inset 0 -3px 0 rgba(0, 0, 0, 0.3)
+            `
+          }}>
+            {/* Screen */}
+            <div className='absolute top-8 left-8 right-8' style={{
+              height: '100px',
+              background: 'linear-gradient(135deg, #001122 0%, #003344 30%, #004466 70%, #001122 100%)',
+              borderRadius: '12px',
+              border: '3px solid rgba(20, 184, 166, 0.6)',
+              boxShadow: 'inset 0 0 25px rgba(20, 184, 166, 0.4)'
+            }}>
+              <div className='absolute inset-3 bg-gradient-to-br from-teal-400/30 to-purple-400/30 rounded-lg flex items-center justify-center'>
+                <div className='text-center'>
+                  <div className='text-teal-200 text-lg font-bold tracking-wider mb-1'>ZERO</div>
+                  <div className='text-purple-200 text-lg font-bold tracking-wider'>LAG</div>
+                </div>
+              </div>
+              {/* Screen glow effect */}
+              <div className='absolute -inset-1 bg-teal-400/20 rounded-xl blur-sm'></div>
+            </div>
+            
+            {/* Control Panel */}
+            <div className='absolute bottom-12 left-8 right-8' style={{
+              height: '70px',
+              background: 'linear-gradient(to bottom, #374151 0%, #1f2937 100%)',
+              borderRadius: '12px',
+              border: '2px solid #4b5563'
+            }}>
+              {/* Arcade Buttons */}
+              <div className='flex justify-center items-center h-full gap-4'>
+                <div className='w-6 h-6 bg-red-500 rounded-full shadow-xl' style={{
+                  boxShadow: '0 0 15px rgba(239, 68, 68, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                }}></div>
+                <div className='w-6 h-6 bg-yellow-400 rounded-full shadow-xl' style={{
+                  boxShadow: '0 0 15px rgba(251, 191, 36, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                }}></div>
+                <div className='w-6 h-6 bg-green-400 rounded-full shadow-xl' style={{
+                  boxShadow: '0 0 15px rgba(74, 222, 128, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                }}></div>
+                <div className='w-6 h-6 bg-blue-400 rounded-full shadow-xl' style={{
+                  boxShadow: '0 0 15px rgba(96, 165, 250, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
+                }}></div>
+              </div>
+            </div>
+            
+            {/* Side Panels */}
+            <div className='absolute -left-2 top-16 w-4 h-32 bg-gradient-to-b from-purple-600 to-purple-800 rounded-l-lg border-l-2 border-purple-400/50'></div>
+            <div className='absolute -right-2 top-16 w-4 h-32 bg-gradient-to-b from-purple-600 to-purple-800 rounded-r-lg border-r-2 border-purple-400/50'></div>
+            
+            {/* Outer Glow */}
+            <div className='absolute -inset-2 bg-gradient-to-r from-teal-400/30 via-transparent to-purple-400/30 rounded-3xl blur-lg -z-10'></div>
+          </div>
+        </div>
+        
+        {/* Animation Styles */}
+        <style>{`
+          @keyframes arcadeGlow {
+            0%, 100% { 
+              background-position: center, 0% 0%; 
+              filter: drop-shadow(0 0 30px rgba(20, 184, 166, 0.5)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.4));
+            }
+            50% { 
+              background-position: center, 100% 100%; 
+              filter: drop-shadow(0 0 40px rgba(20, 184, 166, 0.7)) drop-shadow(0 0 80px rgba(168, 85, 247, 0.6));
+            }
+          }
+        `}</style>
+
+        {/* Dark themed background with flowing waves */}
+        <div className="relative w-full h-screen bg-black overflow-hidden">
+      {/* Dark Wave Background */}
+      <div className="absolute inset-0 z-0">
+        <style>{`
+          @keyframes wave {
+            0% { transform: translateX(-100%) translateY(0px) rotate(0deg); }
+            50% { transform: translateX(0%) translateY(-20px) rotate(180deg); }
+            100% { transform: translateX(100%) translateY(0px) rotate(360deg); }
+          }
+          @keyframes wave2 {
+            0% { transform: translateX(100%) translateY(10px) rotate(180deg); }
+            50% { transform: translateX(0%) translateY(-10px) rotate(0deg); }
+            100% { transform: translateX(-100%) translateY(10px) rotate(-180deg); }
+          }
+          @keyframes glow {
+            0%, 100% { opacity: 0.3; filter: blur(20px); }
+            50% { opacity: 0.8; filter: blur(10px); }
+          }
+        `}</style>
+        
+        {/* Flowing wave elements */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute w-[200%] h-32 bg-gradient-to-r from-transparent via-teal-400/20 to-transparent"
+            style={{
+              top: '20%',
+              left: '-50%',
+              animation: 'wave 15s ease-in-out infinite',
+              borderRadius: '50%',
+              filter: 'blur(15px)'
+            }}
+          />
+          <div 
+            className="absolute w-[180%] h-24 bg-gradient-to-r from-transparent via-cyan-300/15 to-transparent"
+            style={{
+              top: '40%',
+              left: '-40%',
+              animation: 'wave2 20s ease-in-out infinite',
+              borderRadius: '50%',
+              filter: 'blur(20px)'
+            }}
+          />
+          <div 
+            className="absolute w-[220%] h-40 bg-gradient-to-r from-transparent via-teal-500/10 to-transparent"
+            style={{
+              top: '60%',
+              left: '-60%',
+              animation: 'wave 25s ease-in-out infinite reverse',
+              borderRadius: '50%',
+              filter: 'blur(25px)'
+            }}
+          />
+        </div>
+        
+        {/* Additional glow effects */}
+        <div className="absolute inset-0">
+          <img 
+            src="/zlag_token.png"
+            alt="ZLAG Token"
+            className="absolute w-96 h-96 object-contain opacity-80"
+            style={{
+              top: '10%',
+              left: '10%',
+              animation: 'glow 8s ease-in-out infinite',
+              filter: 'drop-shadow(0 0 20px rgba(108, 61, 211, 0.5))'
+            }}
+          />
+          <img 
+            src="/timer-icon.png"
+            alt="Timer Icon"
+            className="absolute w-80 h-80 object-contain opacity-80"
+            style={{
+              top: '50%',
+              right: '10%',
+              animation: 'glow 12s ease-in-out infinite reverse',
+              filter: 'drop-shadow(0 0 20px rgba(20, 184, 166, 0.5))'
+            }}
+          />
+        </div>
       </div>
       
       <div className='relative w-full h-full bg-transparent px-12 py-[14px] text-green-400 z-10'>
@@ -371,7 +582,7 @@ const Landing = () => {
         </div>
         
         {/* floating blue box */}
-        <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-[10.4%] right-[3%] w-[12.7%] h-[83px] bg-green-600 text-white rounded-md shadow-lg shadow-green-500/20'>
+        <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-[10.4%] right-[3%] w-[12.7%] h-[83px] bg-green-600 text-white rounded-md shadow-lg shadow-green-500/20 z-30'>
           <div className='w-[58%] leading-[0.75rem]'>
             <h1 ref={gameChangerTextRef}>
               {typeof showSymbols === 'string' ? showSymbols : (showSymbols === false ? 'trust us, it\'s a game changer!' : '')}
@@ -386,7 +597,7 @@ const Landing = () => {
         </div>
         
         {/* this is the moving behind main text */}
-        <div ref={mainTextRef} className='w-full uppercase pb-4 h-[84%] flex flex-col justify-end'>
+        <div ref={mainTextRef} className='w-full uppercase pb-4 h-[84%] flex flex-col justify-end relative z-20'>
           <div ref={unlockTextRef} className='w-full f6 text-[8rem] leading-none text-right text-white'>
             <h1>unlock your</h1>
           </div>
@@ -399,7 +610,7 @@ const Landing = () => {
         </div>
         
         {/* this is the floating opaque screen */}
-        <div ref={blurredDivRef} className='absolute uppercase text-[13px] w-[46.5%] f8 text-green-300 h-[84%] shadow-2xl shadow-black/30 py-4 pl-3 pr-14 rounded-xl top-[10.4%] bg-gray-800/20 backdrop-blur-md border border-gray-700/30'>
+        <div ref={blurredDivRef} className='absolute uppercase text-[13px] w-[46.5%] f8 text-green-300 h-[84%] shadow-2xl shadow-black/30 py-4 pl-3 pr-14 rounded-xl top-[10.4%] bg-gray-800/20 backdrop-blur-md border border-gray-700/30 z-25'>
           <div className='w-full flex justify-between'>
             <div className='w-[43%] leading-none'>
               <p ref={blurParagraphRef1}>{blurText1 || "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."}</p>
@@ -421,23 +632,101 @@ const Landing = () => {
 
       </div>
 
-      <div className='w-full h-screen overflow-hidden bg-[#000] relative'>
+      <div className='w-full h-screen overflow-hidden relative z-10' style={{
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%)'
+      }}>
+        {/* Flowing wave background effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* @ts-ignore */}
+          <style jsx>{`
+            @keyframes flowWave {
+              0% { transform: translateX(-100%) translateY(0px) scaleY(1); }
+              50% { transform: translateX(50%) translateY(-30px) scaleY(1.2); }
+              100% { transform: translateX(200%) translateY(0px) scaleY(1); }
+            }
+            @keyframes flowWave2 {
+              0% { transform: translateX(200%) translateY(20px) scaleY(0.8); }
+              50% { transform: translateX(-50%) translateY(-10px) scaleY(1.5); }
+              100% { transform: translateX(-200%) translateY(20px) scaleY(0.8); }
+            }
+            @keyframes pulseGlow {
+              0%, 100% { opacity: 0.1; filter: blur(30px); }
+              50% { opacity: 0.4; filter: blur(15px); }
+            }
+          `}</style>
+          
+          {/* Main flowing waves */}
+          <div 
+            className="absolute w-[300%] h-40 bg-gradient-to-r from-transparent via-teal-400/30 to-transparent"
+            style={{
+              top: '25%',
+              left: '-100%',
+              animation: 'flowWave 18s ease-in-out infinite',
+              borderRadius: '50%',
+              filter: 'blur(20px)'
+            }}
+          />
+          <div 
+            className="absolute w-[250%] h-32 bg-gradient-to-r from-transparent via-cyan-300/25 to-transparent"
+            style={{
+              top: '45%',
+              left: '-75%',
+              animation: 'flowWave2 22s ease-in-out infinite',
+              borderRadius: '50%',
+              filter: 'blur(25px)'
+            }}
+          />
+          <div 
+            className="absolute w-[280%] h-36 bg-gradient-to-r from-transparent via-teal-500/20 to-transparent"
+            style={{
+              top: '65%',
+              left: '-90%',
+              animation: 'flowWave 28s ease-in-out infinite reverse',
+              borderRadius: '50%',
+              filter: 'blur(30px)'
+            }}
+          />
+          
+          {/* Additional glow orbs */}
+          <img 
+            src="/lock-icon.png"
+            alt="Lock Icon"
+            className="absolute w-96 h-96 object-contain opacity-80"
+            style={{
+              top: '15%',
+              left: '15%',
+              animation: 'pulseGlow 10s ease-in-out infinite',
+              filter: 'drop-shadow(0 0 20px rgba(255, 79, 216, 0.5))'
+            }}
+          />
+          <img 
+            src="/zlag_token.png"
+            alt="ZLAG Token"
+            className="absolute w-80 h-80 object-contain opacity-70"
+            style={{
+              top: '60%',
+              right: '20%',
+              animation: 'pulseGlow 14s ease-in-out infinite reverse',
+              filter: 'drop-shadow(0 0 15px rgba(108, 61, 211, 0.4))'
+            }}
+          />
+        </div>
 
-        <div ref={opacTextRef} className='w-full capitalize opacity-0 text-center f2 font-semibold text-[20.5px] leading-[10px] pt-[90px] tracking-wide'>
+        <div ref={opacTextRef} className='w-full capitalize opacity-0 text-center f2 font-semibold text-[20.5px] leading-[10px] pt-[90px] tracking-wide relative z-20'>
           <h1 className='mb-4'>Worlds First Ai Powered Disciplinary Dapp</h1>
           <h1>fuel you flame earn your chain</h1>
         </div>
 
-        <div ref={behindRef} className='absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full whitespace-nowrap overflow-hidden '>
+        <div ref={behindRef} className='absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full whitespace-nowrap overflow-hidden z-15'>
           <div ref={firstRef} className="translate-x-[40%]">
             <Marquee text={["ZLAG", "task to earn", "AI verification", "rewards"]} dist={20} />
           </div>
           <div ref={secondRef} className="translate-x-[-40%] mt-1">
-            <Marquee text={["ZLAG", "task to earn", "AI verification", "rewards"]} dist={40} />
+            <Marquee text={["AI verification", "ZLAG", "task to earn", "rewards"]} dist={40} />
           </div>
 
           <div ref={thirdRef} className='translate-x-[40%] mt-1'>
-            <Marquee text={["ZLAG", "task to earn", "AI verification", "rewards"]} dist={30} />
+            <Marquee text={["ZLAG", "rewards", "AI verification", "task to earn"]} dist={30} />
           </div>
 
           <div ref={fourthRef} className="translate-x-[-40%] mt-1">
