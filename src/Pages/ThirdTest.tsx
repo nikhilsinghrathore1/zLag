@@ -1,12 +1,10 @@
-import gsap ,{ScrollTrigger} from 'gsap/all';
-import React, { useEffect, useRef, useState } from 'react'
+import gsap, { ScrollTrigger } from "gsap/all";
+import React, { useEffect, useRef, useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
-import InsideAbout from '../components/InsideAbout';
+import InsideAbout from "../components/InsideAbout";
 // import { infoContext } from '../context/InfoContext';
 
-
 const ThirdTest = () => {
-
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -14,180 +12,328 @@ const ThirdTest = () => {
       setLoaded(true);
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       // Already loaded
       setLoaded(true);
     } else {
       // Wait for the load event
-      window.addEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
     }
 
     return () => {
-      window.removeEventListener('load', handleLoad);
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
   // const {setState} = useContext(infoContext)
 
-const mainCont = useRef(null)
-const firstCont = useRef(null)
-const secondCont = useRef(null)
-const thirdCont = useRef(null)
-const fourthCont = useRef(null)
+  const mainCont = useRef(null);
+  const firstCont = useRef(null);
+  const secondCont = useRef(null);
+  const thirdCont = useRef(null);
+  const fourthCont = useRef(null);
 
-useEffect(() => {
-  if(loaded){
+  useEffect(() => {
+    if (loaded) {
+      gsap.registerPlugin(ScrollTrigger);
 
-  
-  gsap.registerPlugin(ScrollTrigger)
-  
-  // Main container color change - starts when component comes into view
-  gsap.to(mainCont.current,{
-    scrollTrigger:{
-      trigger:mainCont.current,
-      start:"top bottom", // Start when top of element reaches bottom of viewport
-      end:"bottom top", // End when bottom of element reaches top of viewport
-      scrub:5
-    },
-    backgroundColor:"#AEDEE0",
-    color:"#000",
-    duration:1,
-    // onStart:()=>setState("achievements")
-  });
+      // Main container color change - starts when component comes into view
+      gsap.to(mainCont.current, {
+        scrollTrigger: {
+          trigger: mainCont.current,
+          start: "top bottom", // Start when top of element reaches bottom of viewport
+          end: "bottom top", // End when bottom of element reaches top of viewport
+          scrub: 5,
+        },
+        backgroundColor: "#AEDEE0",
+        color: "#000",
+        duration: 1,
+        // onStart:()=>setState("achievements")
+      });
 
-  // First container animation - starts after component is in view
-  gsap.to(firstCont.current,{
-    scrollTrigger:{
-      trigger:firstCont.current,
-      start:"top 80%", // Start when top of element reaches 80% from top of viewport
-      end:"top 60%", // Quick transition
-      scrub:1
-    },
-    width:"500px",
-    backgroundColor:"black",
-    color:"white",
-    duration:0.1,
-  });
+      // First container animation - starts after component is in view
+      gsap.to(firstCont.current, {
+        scrollTrigger: {
+          trigger: firstCont.current,
+          start: "top 80%", // Start when top of element reaches 80% from top of viewport
+          end: "top 60%", // Quick transition
+          scrub: 1,
+        },
+        width: "500px",
+        backgroundColor: "black",
+        color: "white",
+        duration: 0.1,
+      });
 
-  // Second container animation
-  gsap.to(secondCont.current,{
-    scrollTrigger:{
-      trigger:secondCont.current,
-      start:"top 80%",
-      end:"top 60%",
-      scrub:1
-    },
-    width:"500px",
-    backgroundColor:"black",
-    color:"white",
-    duration:0.1,
-  })
+      // Second container animation
+      gsap.to(secondCont.current, {
+        scrollTrigger: {
+          trigger: secondCont.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        width: "500px",
+        backgroundColor: "black",
+        color: "white",
+        duration: 0.1,
+      });
 
-  // Third container animation
-  gsap.to(thirdCont.current,{
-    scrollTrigger:{
-      trigger:thirdCont.current,
-      start:"top 80%",
-      end:"top 60%",
-      scrub:1
-    },
-    width:"500px",
-    backgroundColor:"black",
-    color:"white",
-    duration:0.1,
-  })
+      // Third container animation
+      gsap.to(thirdCont.current, {
+        scrollTrigger: {
+          trigger: thirdCont.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        width: "500px",
+        backgroundColor: "black",
+        color: "white",
+        duration: 0.1,
+      });
 
-  // Fourth container animation
-  gsap.to(fourthCont.current,{
-    scrollTrigger:{
-      trigger:fourthCont.current,
-      start:"top 80%",
-      end:"top 60%",
-      scrub:1
-    },
-    width:"500px",
-    backgroundColor:"black",
-    color:"white",
-    duration:0.1,
-  })
-}
-}, [loaded])
-
+      // Fourth container animation
+      gsap.to(fourthCont.current, {
+        scrollTrigger: {
+          trigger: fourthCont.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+        width: "500px",
+        backgroundColor: "black",
+        color: "white",
+        duration: 0.1,
+      });
+    }
+  }, [loaded]);
 
   return (
-    <div className='w-[100vw] '>
-    <div ref={mainCont} className='w-full  h-[270vh] justify-between bg-[#000] relative flex items-start px-12'>
+    <div className="w-[100vw] ">
+      <div
+        ref={mainCont}
+        className="w-full  h-[270vh] justify-between bg-[#000] relative flex items-start px-12"
+      >
         {/* Background Video */}
-        <video 
-          className='absolute top-0 left-0 w-full h-full object-cover z-0'
-          autoPlay 
-          loop 
-          muted 
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
           playsInline
         >
           <source src="../web.mp4" type="video/mp4" />
           {/* Fallback for browsers that don't support video */}
           Your browser does not support the video tag.
         </video>
-        
+
         {/* Dark overlay for better text readability */}
-        <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10'></div>
-               <div  className='w-[41.9%] h-[45%]  pt-20 sticky top-0 relative z-20'>
-                           <p className='f4 text-[1.14rem] font-bold tracking-tight leading-[1.78rem] text-white'>ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete tasks to unlock funds, earn dynamic NFTs and $ZLAG rewards. Miss them, and your locked crypto is burned, driving real accountability.</p>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10"></div>
 
-                           <h1 className='f5 text-[3.3rem] mt-5 leading-[4rem] font-bold text-white'>Web3-Discipline AI Driven Growth</h1>
+        <div className="w-[41.9%] h-[45%] pt-20 sticky top-0 relative z-20">
+          <p className="f4 text-[1.3rem] font-bold tracking-tight leading-[2rem] text-white">
+            ZeroLag is your decentralized Discipline-as-a-Service platform,
+            expertly designed to transform your intentions into tangible
+            achievements. Define your goals, secure your ambition with an
+            accountability reserve, and complete your tasks to unlock powerful
+            $ZLAG rewards and exclusive dynamic NFTs. Should a goal not be met,
+            your designated tokens contribute back to the ecosystem, fueling
+            collective accountability and reinforcing your commitment for the
+            next success.
+          </p>
 
-                           <div className='w-[38%] h-[60px] mt-5 border border-white font-bold uppercase flex items-center gap-2 text-[15px] f4 justify-center text-white bg-black bg-opacity-20 hover:bg-opacity-40 transition-all duration-300'>
-                              <h1 className='flex items-center gap-2'>our Solutions <GoArrowUpRight className='text-[1.2rem] '/></h1>
-                           </div>
-               </div>
-               <div className='w-[50%]   h-full pt-[85vh] pl-12 relative z-20'>
-                              <div ref={firstCont} className=' w-[460px] origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-black h-[15.5%]'>
-                                            <InsideAbout mainText={"Commit & lock crypto"} para={"The user selects a task, connects their Web3 wallet, and locks a chosen amount of $ZLAG tokens as collateral in a smart contract."} svg={<svg width="100%" height="38%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.2" d="M45.9998 10H31.9998L19.7271 26L31.9998 56L59.9998 26L45.9998 10Z" fill="currentColor"></path>
-<path d="M18 10H46L60 26L32 56L4 26L18 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M44.2726 26L31.9998 56L19.7271 26L31.9998 10L44.2726 26Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M4 26H60" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>}/>
+          <h1 className="f5 text-[3.8rem] mt-5 leading-[4.3rem] font-bold text-white">
+            Web3-Discipline AI Driven Growth
+          </h1>
 
-                              </div>
-                              <div ref={secondCont} className=' w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-black h-[15.5%]'>
-                                            <InsideAbout mainText={"Complete & Proof"} para={"The user stays consistent and completes the task within the deadline. They then submit verifiable proof, such as text, files, images, or URLs, to confirm successful completion."} svg={<svg width="100%" height="40%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.2" d="M49.0005 54C52.8665 54 56.0005 50.866 56.0005 47C56.0005 43.134 52.8665 40 49.0005 40C45.1345 40 42.0005 43.134 42.0005 47C42.0005 50.866 45.1345 54 49.0005 54Z" fill="currentColor"></path>
-<path opacity="0.2" d="M15 24C18.866 24 22 20.866 22 17C22 13.134 18.866 10 15 10C11.134 10 8 13.134 8 17C8 20.866 11.134 24 15 24Z" fill="currentColor"></path>
-<path d="M49.0005 54C52.8665 54 56.0005 50.866 56.0005 47C56.0005 43.134 52.8665 40 49.0005 40C45.1345 40 42.0005 43.134 42.0005 47C42.0005 50.866 45.1345 54 49.0005 54Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M49.0006 40L49.0002 29.9703C49.0001 26.7878 47.7358 23.7358 45.4855 21.4855L36 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M36 22V12H46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M15 24C18.866 24 22 20.866 22 17C22 13.134 18.866 10 15 10C11.134 10 8 13.134 8 17C8 20.866 11.134 24 15 24Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M15 24L15.0004 34.0297C15.0005 37.2122 16.2648 40.2642 18.5151 42.5145L28.0006 52" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M28.0003 42V52H18.0003" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>}/>
+          <div className="w-[38%] h-[60px] mt-5 border border-white font-bold uppercase flex items-center gap-2 text-[16px] f4 justify-center text-white bg-black bg-opacity-20 hover:bg-opacity-40 transition-all duration-300">
+            <h1 className="flex items-center gap-2">
+              Our Solutions <GoArrowUpRight className="text-[1.3rem]" />
+            </h1>
+          </div>
+        </div>
 
-                              </div>
-                              <div ref={thirdCont} className=' w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-black h-[15.5%]'>
-                                            <InsideAbout mainText={"Smart AI verification"} para={"AI instantly validates the submitted proof against task requirements.Success: Locked $ZLAG is unlocked. Failure: Tokens are burned as a penalty."} svg={<svg width="100%" height="40%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.2" d="M50 38.2155L40.8007 47.4147C40.5565 47.659 40.2532 47.8358 39.9204 47.928C39.5875 48.0201 39.2365 48.0246 38.9014 47.9408L24.4122 44.3185C24.1404 44.2506 23.886 44.1263 23.6653 43.9537L10 33.268L18.1436 17.9475L30.9736 14.2071C31.4319 14.0735 31.9229 14.1082 32.3578 14.3051L41 18.2155H35.8284C35.5658 18.2155 35.3057 18.2672 35.0631 18.3677C34.8204 18.4682 34.5999 18.6155 34.4142 18.8012L24.6306 28.5848C24.428 28.7875 24.2713 29.0313 24.1711 29.2997C24.0709 29.5682 24.0295 29.855 24.0498 30.1408C24.0702 30.4267 24.1517 30.7048 24.2888 30.9564C24.426 31.208 24.6156 31.4271 24.8448 31.5991L26.2 32.6155C27.5848 33.654 29.269 34.2155 31 34.2155C32.731 34.2155 34.4152 33.654 35.8 32.6155L39 30.2155L50 38.2155Z" fill="currentColor"></path>
-<path d="M60.1794 30.4462L54 33.5359L46 18.2154L52.2423 15.0942C52.7113 14.8597 53.2536 14.8188 53.7525 14.9802C54.2514 15.1416 54.6669 15.4925 54.9096 15.9573L61.0578 27.7316C61.1808 27.967 61.2556 28.2246 61.2779 28.4892C61.3002 28.7539 61.2696 29.0204 61.1878 29.2731C61.1061 29.5258 60.9748 29.7596 60.8016 29.9611C60.6285 30.1625 60.417 30.3274 60.1794 30.4462V30.4462Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M10.0011 33.2681L3.8217 30.1784C3.58414 30.0596 3.37261 29.8947 3.19947 29.6932C3.02633 29.4918 2.89504 29.258 2.81327 29.0052C2.7315 28.7525 2.70088 28.4861 2.7232 28.2214C2.74552 27.9568 2.82033 27.6992 2.94327 27.4638L9.09151 15.6895C9.33421 15.2247 9.74973 14.8738 10.2486 14.7124C10.7475 14.551 11.2898 14.5919 11.7588 14.8264L18.0011 17.9475L10.0011 33.2681Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M54 33.5359L50 38.2154L40.8007 47.4147C40.5565 47.6589 40.2532 47.8357 39.9204 47.9279C39.5875 48.0201 39.2365 48.0245 38.9014 47.9407L24.4122 44.3184C24.1404 44.2505 23.886 44.1262 23.6653 43.9537L10 33.2679" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M50 38.2155L39 30.2155L35.8 32.6155C34.4152 33.654 32.7309 34.2155 31 34.2155C29.269 34.2155 27.5848 33.654 26.2 32.6155L24.8448 31.5991C24.6156 31.4271 24.4259 31.208 24.2888 30.9564C24.1516 30.7048 24.0701 30.4267 24.0498 30.1408C24.0295 29.855 24.0709 29.5682 24.1711 29.2997C24.2713 29.0313 24.428 28.7875 24.6306 28.5849L34.4142 18.8012C34.5999 18.6155 34.8204 18.4682 35.063 18.3677C35.3057 18.2672 35.5658 18.2155 35.8284 18.2155H46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M18.1433 17.9475L30.9733 14.2071C31.4316 14.0735 31.9226 14.1082 32.3576 14.3051L40.9997 18.2155" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M28 53.2154L20.4651 51.3317C20.1594 51.2552 19.876 51.1076 19.6381 50.9008L14 46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>}/>
+        <div className="w-[50%]   h-full pt-[85vh] pl-12 relative z-20">
+          {/* Add CSS animations for sequential glow */}
+          <style>{`
+                                 @keyframes sequentialGlow {
+                                   0%, 80%, 100% { 
+                                     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+                                     border-color: rgba(255, 255, 255, 0.3);
+                                   }
+                                   20% { 
+                                     box-shadow: 0 0 20px rgba(20, 184, 166, 0.8), 0 0 40px rgba(20, 184, 166, 0.6);
+                                     border-color: rgba(20, 184, 166, 0.8);
+                                     transform: scale(1.02);
+                                   }
+                                 }
+                                 
+                                 @keyframes arrowGlow {
+                                   0%, 80%, 100% { opacity: 0; transform: translateY(0px); }
+                                   20%, 60% { opacity: 1; transform: translateY(-5px); }
+                                 }
+                                 
+                                 .step-1 { animation: sequentialGlow 8s ease-in-out infinite; }
+                                 .step-2 { animation: sequentialGlow 8s ease-in-out infinite 2s; }
+                                 .step-3 { animation: sequentialGlow 8s ease-in-out infinite 4s; }
+                                 .step-4 { animation: sequentialGlow 8s ease-in-out infinite 6s; }
+                                 
+                                 .arrow-1 { animation: arrowGlow 8s ease-in-out infinite 1.5s; }
+                                 .arrow-2 { animation: arrowGlow 8s ease-in-out infinite 3.5s; }
+                                 .arrow-3 { animation: arrowGlow 8s ease-in-out infinite 5.5s; }
+                               `}</style>
 
-                              </div>
-                              <div ref={fourthCont} className=' w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-black h-[15.5%]'>
-                                            <InsideAbout mainText={"Earn rewards and grow Discipline "} para={"On successful AI verification, the user gets back locked $ZLAG and earns a unique NFT symbolizing their accomplishment and consistency."} svg={<svg width="100%" height="40%" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.2" d="M10 26.6667V12C10 11.4696 10.2107 10.9609 10.5858 10.5858C10.9609 10.2107 11.4696 10 12 10H52C52.5304 10 53.0391 10.2107 53.4142 10.5858C53.7893 10.9609 54 11.4696 54 12V26.6667C54 47.6705 36.1735 54.6292 32.6141 55.8093C32.2161 55.9463 31.7839 55.9463 31.386 55.8093C27.8265 54.6292 10 47.6705 10 26.6667Z" fill="currentColor"></path>
-<path d="M10 26.6667V12C10 11.4696 10.2107 10.9609 10.5858 10.5858C10.9609 10.2107 11.4696 10 12 10H52C52.5304 10 53.0391 10.2107 53.4142 10.5858C53.7893 10.9609 54 11.4696 54 12V26.6667C54 47.6705 36.1735 54.6292 32.6141 55.8093C32.2161 55.9463 31.7839 55.9463 31.386 55.8093C27.8265 54.6292 10 47.6705 10 26.6667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M43 24L28.3333 38L21 31" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>}/>
+          <div
+            ref={firstCont}
+            className="step-1 w-[460px] origin-center ml-3 transition-all pt-4 flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
+          >
+            <InsideAbout
+              mainText={"Step 1: Define & Secure Your Ambition"}
+              para={
+                "You choose your task and decide on an accountability reserve a chosen amount of $ZLAG tokens that you designate for success within a smart contract. This isn't just a transaction; it's a powerful pledge to yourself"
+              }
+              svg={
+                <img
+                  src="/goal.png"
+                  alt="Goal Icon"
+                  className="w-full h-[38%] object-contain"
+                />
+              }
+            />
 
-                              </div>
-               </div>
+            {/* Pointing Arrow to next step */}
+            <div className="arrow-1 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-teal-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 5V19M12 19L19 12M12 19L5 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            ref={secondCont}
+            className="step-2 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
+          >
+            <InsideAbout
+              mainText={"Step 2: Act & Prove Your Progress"}
+              para={
+                "Stay consistent and complete your task within the deadline. Then, submit verifiable proof – such as text, files, images, or URLs – to confirm your successful completion, all through our intuitive interface."
+              }
+              svg={
+                <img
+                  src="/proof.png"
+                  alt="Goal Icon"
+                  className="w-full h-[38%] object-contain"
+                />
+              }
+            />
+
+            {/* Pointing Arrow to next step */}
+            <div className="arrow-2 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-teal-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 5V19M12 19L19 12M12 19L5 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            ref={thirdCont}
+            className="step-3 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
+          >
+            <InsideAbout
+              mainText={"Step 3: Smart AI Verification"}
+              para={
+                "AI validates the submitted proof against task requirements.Success: Locked $ZLAG is unlocked. Failure: Tokens are burned as a penalty."
+              }
+              svg={
+                <img
+                  src="/ai.png"
+                  alt="Goal Icon"
+                  className="w-full h-[38%] object-contain"
+                />
+              }
+            />
+            {/* Pointing Arrow to next step */}
+            <div className="arrow-3 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-teal-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 5V19M12 19L19 12M12 19L5 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            ref={fourthCont}
+            className="step-4 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
+          >
+            <InsideAbout
+              mainText={"Step 4: Earn Rewards & Forge Your Legacy "}
+              para={
+                "On successful AI verification, you receive your unlocked $ZLAG and earn a unique NFT – a dynamic digital asset symbolizing your accomplishment and unwavering consistency. This is your Chain of Accomplishment"
+              }
+              svg={
+                <img
+                  src="/aii.png"
+                  alt="Goal Icon"
+                  className="w-full h-[38%] object-contain"
+                />
+              }
+            />
+            {/* Pointing Arrow to next step */}
+            <div className="arrow-4 absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-teal-400">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 5V19M12 19L19 12M12 19L5 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ThirdTest
+export default ThirdTest;

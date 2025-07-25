@@ -128,12 +128,7 @@ const Fourth = () => {
 
           {/* Dark overlay for better text readability */}
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 z-10"></div>
-          <div className="w-full flex justify-start b h-[30%]  pl-10 relative z-20">
-            <p className="w-[20%] text-[17px] leading-[30px] text-white font-bold">
-              We’re on a mission to impact as many lives as possible and build a
-              better company while we do it. Here’s our reward system.
-            </p>
-          </div>
+          {/* Removed corner paragraph to match reference image */}
           <div className="w-full h-[70%] text-center pl-44 relative z-20">
             {/* Background Image */}
             {/* <div 
@@ -142,33 +137,178 @@ const Fourth = () => {
                                                  backgroundImage: 'url("/cosmic-nebula.jpg")',
                                                }}
                                              ></div> */}
-            <div className="text-center w-[70%] leading-none font-bold f5 mb-8 relative z-30">
-              <h1 className="text-white text-[10rem] leading-none font-bold text-shadow-lg">
-                7 levels
+            {/* Main Heading */}
+            <div className="text-center w-[90%] leading-none mb-3 relative z-30">
+              <h1 className="text-white text-[5.5rem] leading-[6rem] font-black tracking-wide text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                Unlock Exclusive Rewards
               </h1>
             </div>
-            <div className="text-center w-[80%] f3 leading-[3.5rem] font-bold relative z-30">
-              <p className="text-white text-[3rem] leading-[3.5rem] font-bold text-shadow-lg">
-                3 Days-Common — 7 Days-Uncommon 14 Days-Rare 30 Days-Epic.
+            
+            {/* Sub-heading */}
+            <div className="text-center w-[90%] mb-8 relative z-30">
+              <p className="text-white text-[1.8rem] leading-[2.2rem] font-light italic text-shadow-lg tracking-wide" style={{fontFamily: 'Inter, sans-serif'}}>
+                Your Path to Digital Mastery
               </p>
             </div>
-
-            {/* CENTER IMAGE between splitting screens */}
-            <div className="absolute top-1/2 left-[96%] transform -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem] z-40">
-              <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/20 shadow-2xl shadow-cyan-400/30">
-                <img
-                  src="/rewardssss.png"
-                  alt="Center Transition Image"
-                  className="w-full h-full object-cover rounded-full"
-                  style={{
-                    filter:
-                      "brightness(1.3) contrast(1.2) drop-shadow(0 0 30px rgba(20, 184, 166, 0.6))",
-                  }}
-                />
-              </div>
-              {/* Glowing ring effect */}
-              <div className="absolute inset-0 rounded-full border-2 border-cyan-400/50 animate-pulse"></div>
+            
+            {/* Section Title */}
+            <div className="text-center w-[90%] mb-3 relative z-30">
+              <h2 className="text-white text-[2.5rem] leading-[2.8rem] font-bold text-shadow-lg tracking-wide" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                Forge Your Legacy: Explore Our Dynamic NFT Tiers
+              </h2>
             </div>
+            
+            {/* Description */}
+            <div className="text-center w-[85%] mb-8 relative z-30">
+              <p className="text-white text-[1.2rem] leading-[1.7rem] font-normal text-shadow-lg" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.5px'}}>
+                Each day of consistency unlocks a new level of accomplishment, represented by a unique and evolving NFT. The longer you commit, the greater your reward and the more prestigious your digital legacy becomes.
+              </p>
+            </div>
+            
+            {/* NFT Tiers - Horizontal Layout with Images */}
+            <div className="flex justify-center items-start w-[95%] gap-12 relative z-30">
+              {/* 3 Days: Spark NFT */}
+              <div className="text-center max-w-[180px]">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-blue-400/30">
+                  <img 
+                    src="/Spark.jpg" 
+                    alt="Spark" 
+                    className="w-full h-full object-cover"
+                    // style={{
+                    //   filter: 'hue-rotate(220deg) saturate(1.5) brightness(1.2)'
+                    // }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>3 Days</span>
+                </div>
+                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Spark NFT
+                </h3>
+                <div className="mb-2">
+                  <span className="text-blue-300 text-[0.95rem] font-semibold text-shadow-lg uppercase tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    Common
+                  </span>
+                </div>
+                <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
+                  The ignition of your discipline.
+                </p>
+              </div>
+              
+              {/* 7 Days: Ember NFT */}
+              <div className="text-center max-w-[180px]">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-cyan-400/30">
+                  <img 
+                    src="/marqueimg1.jpg" 
+                    alt="Ember" 
+                    className="w-full h-full object-cover"
+                    // style={{
+                    //   filter: 'hue-rotate(180deg) saturate(1.4) brightness(1.3)'
+                    // }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>7 Days</span>
+                </div>
+                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                  EmFT
+                </h3>
+                <div className="mb-2">
+                  <span className="text-cyan-300 text-[0.95rem] font-semibold text-shadow-lg uppercase tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    Uncommon
+                  </span>
+                </div>
+                <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Your commitment begins to glow.
+                </p>
+              </div>
+              
+              {/* 14 Days: Flame NFT */}
+              <div className="text-center max-w-[180px]">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-purple-400/30">
+                  <img 
+                    src="/Flamee.jpg" 
+                    alt="Flame NFT" 
+                    className="w-full h-full object-cover"
+                    // style={{
+                    //   filter: 'hue-rotate(280deg) saturate(1.6) brightness(1.4)'
+                    // }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>14 Days</span>
+                </div>
+                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Flame NFT
+                </h3>
+                <div className="mb-2">
+                  <span className="text-purple-300 text-[0.95rem] font-semibold text-shadow-lg uppercase tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    Rare
+                  </span>
+                </div>
+                <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Ignite your potential, consistently.
+                </p>
+              </div>
+              
+              {/* 30 Days: Blaze NFT */}
+              <div className="text-center max-w-[180px]">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-green-400/30">
+                  <img 
+                    src="/blazee.jpg" 
+                    alt="Blaze NFT" 
+                    className="w-full h-full object-cover"
+                    // style={{
+                    //   filter: 'hue-rotate(120deg) saturate(1.7) brightness(1.5)'
+                    // }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>30 Days</span>
+                </div>
+                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Blaze NFT
+                </h3>
+                <div className="mb-2">
+                  <span className="text-green-300 text-[0.95rem] font-semibold text-shadow-lg uppercase tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    Epic
+                  </span>
+                </div>
+                <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
+                  A beacon of unstoppable discipline.
+                </p>
+              </div>
+              
+              {/* 60+ Days: Inferno NFT */}
+              <div className="text-center max-w-[180px]">
+                <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-yellow-400/30">
+                  <img 
+                    src="/inferno.jpg" 
+                    alt="Inferno NFT" 
+                    className="w-full h-full object-cover"
+                    // style={{
+                    //   filter: 'hue-rotate(60deg) saturate(2) brightness(1.6) contrast(1.3)'
+                    // }}
+                  />
+                </div>
+                <div className="mb-2">
+                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>60+ Days</span>
+                </div>
+                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Inferno NFT
+                </h3>
+                <div className="mb-2">
+                  <span className="text-yellow-300 text-[0.95rem] font-semibold text-shadow-lg uppercase tracking-wider" style={{fontFamily: 'Montserrat, sans-serif'}}>
+                    Legendary
+                  </span>
+                </div>
+                <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
+                  Achieve legendary discipline. Your Ultimate Chain of Accomplishment.
+                </p>
+              </div>
+            </div>
+
+            {/* CENTER IMAGE REMOVED */}
           </div>
 
           <div
@@ -402,5 +542,6 @@ const Fourth = () => {
 };
 
 export default Fourth;
+
 
 // iterative development with systematic and controlled aspect ofwith the water fall it allows incremental releases of product refinement through each iteration around the spiral

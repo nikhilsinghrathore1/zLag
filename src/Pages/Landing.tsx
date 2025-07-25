@@ -318,7 +318,76 @@ const Landing = () => {
   // const stars = useMemo(() => generateStars(), []);
 
   return (
-    <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh] bg-gradient-to-br from-gray-900 via-black to-gray-800'>
+    <div ref={topRef} className='w-full relative text-[#EEE9CC] h-[110vh]' style={{
+      background: `
+        radial-gradient(circle at 20% 30%, rgba(108, 61, 211, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(255, 79, 216, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%)
+      `,
+      backgroundSize: '800px 800px, 600px 600px, 500px 500px, 100% 100%',
+      backgroundPosition: '10% 20%, 90% 60%, 50% 90%, center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      {/* Testing ZLAG Token Visibility */}
+      <div className="absolute inset-0 z-[10]" style={{
+        // filter: 'blur(8px) brightness(1.5) saturate(1.3)' - removed for testing
+      }}>
+        <img 
+          src="./zlag_token.png"
+          alt="ZLAG Token"
+          className="absolute w-[200px] h-[200px] object-contain border-4 border-red-500"
+          style={{
+            top: '10%',
+            left: '10%',
+            opacity: 1,
+            backgroundColor: 'rgba(255,0,0,0.3)'
+          }}
+          onLoad={() => console.log('ZLAG token image loaded successfully!')}
+          onError={(e) => console.error('Failed to load ZLAG token image:', e)}
+        />
+        <div 
+          className="absolute w-[200px] h-[200px] border-4 border-blue-500 bg-blue-500"
+          style={{
+            top: '10%',
+            right: '10%',
+            opacity: 0.8
+          }}
+        >
+          <span className="text-white p-4">TEST DIV - Should be visible</span>
+        </div>
+        <img 
+          src="/zlag_token.png"
+          alt="ZLAG Token"
+          className="absolute w-[400px] h-[400px] object-contain"
+          style={{
+            top: '40%',
+            right: '5%',
+            opacity: 0.8
+          }}
+        />
+        <img 
+          src="/zlag_token.png"
+          alt="ZLAG Token"
+          className="absolute w-[350px] h-[350px] object-contain"
+          style={{
+            bottom: '10%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            opacity: 0.7
+          }}
+        />
+        <img 
+          src="/zlag_token.png"
+          alt="ZLAG Token"
+          className="absolute w-[300px] h-[300px] object-contain"
+          style={{
+            top: '60%',
+            left: '20%',
+            opacity: 0.6
+          }}
+        />
+      </div>
 
 <div className={`${loaded ? 'hidden' : 'flex'} fixed inset-0 z-[100] bg-black bg-opacity-90 items-center justify-center`}>
   <div className="flex flex-col items-center space-y-4">
