@@ -452,7 +452,7 @@ const Sixth = () => {
       </div>
 
       {/* Enhanced Cosmic Footer */}
-      <footer className='footer-container' style={{
+      <footer className='footer-container backdrop-blur-md' style={{
         backgroundImage: 'url("/cosmic-nebula.jpg"), linear-gradient(180deg, rgba(5, 1, 10, 0) 0%, rgba(10, 6, 36, 0.9) 10%, #0A0624 25%, #16213e 45%, #0f3460 65%, #1a1a2e 80%, #2a2a4e 95%, #000000 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -554,7 +554,7 @@ const Sixth = () => {
           {/* Bottom Footer */}
           <div className='footer-bottom'>
             <div>
-              <p className='text-cyan-200/70 f2'>© 2024 ZeroLag. All rights reserved.</p>
+              <p className='text-cyan-200/70 f2'> 2024 ZeroLag. All rights reserved.</p>
               <p className='text-purple-200/60 f2' style={{
                 textShadow: '0 0 8px rgba(255, 79, 216, 0.3)'
               }}>"Fuel your flame, earn your chain"</p>
@@ -562,7 +562,7 @@ const Sixth = () => {
             <div className='text-cyan-200/60 f2'>
               <span>Built on </span>
               <span className='text-teal-400 font-semibold'>Web3</span>
-              <span> • Powered by </span>
+              <span> Powered by </span>
               <span className='text-purple-400 font-semibold'>AI</span>
             </div>
           </div>
