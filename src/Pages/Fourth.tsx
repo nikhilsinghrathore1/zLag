@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 // import { infoContext } from '../context/InfoContext';
 // Image referenced directly from public folder
-const dashboardimg = "/slider4img.png";
+// const dashboardimg = "/slider4img.png"; // Removed as no longer used
 
 const Fourth = () => {
   const [loaded, setLoaded] = useState(false);
@@ -283,7 +283,7 @@ const Fourth = () => {
               <div className="text-center max-w-[180px]">
                 <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-yellow-400/30">
                   <img 
-                    src="/inferno.jpg" 
+                    src="./inferno.jpg" 
                     alt="Inferno NFT" 
                     className="w-full h-full object-cover"
                     // style={{
@@ -463,7 +463,7 @@ const Fourth = () => {
           </div>
 
           {/* Custom Animations */}
-          <style jsx>{`
+          <style>{`
             @keyframes float {
               0%, 100% { transform: translateY(0px) rotate(12deg); }
               50% { transform: translateY(-20px) rotate(12deg); }
