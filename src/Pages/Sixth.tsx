@@ -450,6 +450,7 @@ const Sixth = () => {
         })}</p>
 
       </div>
+      {/* clg */}
 
       {/* Enhanced Cosmic Footer */}
       <footer className='footer-container backdrop-blur-md relative overflow-hidden' style={{
