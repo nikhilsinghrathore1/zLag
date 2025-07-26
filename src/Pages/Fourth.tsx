@@ -177,8 +177,8 @@ const Fourth = () => {
                                                }}
                                              ></div> */}
             {/* Main Heading */}
-            <div className="text-center w-[90%] leading-none mb-3 relative z-30">
-              <h1 className="text-white text-[5.5rem] leading-[6rem] font-black tracking-wide text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>
+            <div className="text-center w-[100%]  leading-none mb-3 relative z-30">
+              <h1 className="text-white text-[6rem] text-center leading-[5.5rem] font-black tracking-wide text-shadow-lg f5" >
                 Unlock Exclusive Rewards
               </h1>
             </div>
@@ -191,21 +191,17 @@ const Fourth = () => {
             </div>
             
             {/* Section Title */}
-            <div className="text-center w-[90%] mb-3 relative z-30">
-              <h2 className="text-white text-[2.5rem] leading-[2.8rem] font-bold text-shadow-lg tracking-wide" style={{fontFamily: 'Montserrat, sans-serif'}}>
-                Forge Your Legacy: Explore Our Dynamic NFT Tiers
-              </h2>
-            </div>
+       
             
             {/* Description */}
             <div className="text-center w-[85%] mb-8 relative z-30">
-              <p className="text-white text-[1.2rem] leading-[1.7rem] font-normal text-shadow-lg" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.5px'}}>
+              <p className="text-white text-[1rem] leading-[1.4rem] opacity-70 font-normal text-shadow-lg" style={{fontFamily: 'Inter, sans-serif', letterSpacing: '0.5px'}}>
                 Each day of consistency unlocks a new level of accomplishment, represented by a unique and evolving NFT. The longer you commit, the greater your reward and the more prestigious your digital legacy becomes.
               </p>
             </div>
             
             {/* NFT Tiers - Horizontal Layout with Images */}
-            <div className="flex justify-center items-start w-[95%] gap-12 relative z-30">
+            <div className="flex justify-center mt-10 items-start w-[95%] gap-12 relative z-30">
               {/* 3 Days: Spark NFT */}
               <div className="text-center max-w-[180px]">
                 <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-blue-400/30">
@@ -219,9 +215,9 @@ const Fourth = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>3 Days</span>
+                  <span className="text-white leading-none text-[1.2rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>3 Days</span>
                 </div>
-                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                <h3 className="text-white leading-none mb-3 text-[1rem] font-bold text-shadow-lg " style={{fontFamily: 'Inter, sans-serif'}}>
                   Spark NFT
                 </h3>
                 <div className="mb-2">
@@ -247,9 +243,9 @@ const Fourth = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>7 Days</span>
+                  <span className="text-white text-[1.2rem] leading-none font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>7 Days</span>
                 </div>
-                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                <h3 className="text-white text-[1rem] leading-none font-bold text-shadow-lg mb-3" style={{fontFamily: 'Inter, sans-serif'}}>
                   EmFT
                 </h3>
                 <div className="mb-2">
@@ -275,9 +271,9 @@ const Fourth = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>14 Days</span>
+                  <span className="text-white text-[1.2rem] leading-none  font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>14 Days</span>
                 </div>
-                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                <h3 className="text-white text-[1rem] leading-none font-bold text-shadow-lg mb-3" style={{fontFamily: 'Inter, sans-serif'}}>
                   Flame NFT
                 </h3>
                 <div className="mb-2">
@@ -303,9 +299,9 @@ const Fourth = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>30 Days</span>
+                  <span className="text-white text-[1.2rem] leading-none font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>30 Days</span>
                 </div>
-                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                <h3 className="text-white text-[1rem] leading-none font-bold text-shadow-lg mb-3" style={{fontFamily: 'Inter, sans-serif'}}>
                   Blaze NFT
                 </h3>
                 <div className="mb-2">
@@ -322,7 +318,7 @@ const Fourth = () => {
               <div className="text-center max-w-[180px]">
                 <div className="w-28 h-28 mx-auto mb-4 rounded-xl overflow-hidden shadow-2xl border-2 border-yellow-400/30">
                   <img 
-                    src="./inferno.jpg" 
+                    src="/inferno.jpg" 
                     alt="Inferno NFT" 
                     className="w-full h-full object-cover"
                     // style={{
@@ -331,9 +327,9 @@ const Fourth = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <span className="text-white text-[1.3rem] font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>60+ Days</span>
+                  <span className="text-white text-[1.2rem] leading-none font-black text-shadow-lg" style={{fontFamily: 'Montserrat, sans-serif'}}>60+ Days</span>
                 </div>
-                <h3 className="text-white text-[1.1rem] font-bold text-shadow-lg mb-1" style={{fontFamily: 'Inter, sans-serif'}}>
+                <h3 className="text-white text-[1rem] font-bold leading-none text-shadow-lg mb-3" style={{fontFamily: 'Inter, sans-serif'}}>
                   Inferno NFT
                 </h3>
                 <div className="mb-2">
@@ -342,11 +338,10 @@ const Fourth = () => {
                   </span>
                 </div>
                 <p className="text-white/90 text-[0.85rem] font-normal text-shadow-lg leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
-                  Achieve legendary discipline. Your Ultimate Chain of Accomplishment.
+                  Achieve legendary discipline.
                 </p>
               </div>
             </div>
-
             {/* CENTER IMAGE REMOVED */}
           </div>
 

@@ -131,19 +131,12 @@ const ThirdTest = () => {
         {/* Dark overlay for better text readability */}
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10"></div>
 
-        <div className="w-[41.9%] h-[45%] pt-20 sticky top-0 relative z-20">
-          <p className="f4 text-[1.3rem] font-bold tracking-tight leading-[2rem] text-white">
-            ZeroLag is your decentralized Discipline-as-a-Service platform,
-            expertly designed to transform your intentions into tangible
-            achievements. Define your goals, secure your ambition with an
-            accountability reserve, and complete your tasks to unlock powerful
-            $ZLAG rewards and exclusive dynamic NFTs. Should a goal not be met,
-            your designated tokens contribute back to the ecosystem, fueling
-            collective accountability and reinforcing your commitment for the
-            next success.
+        <div className="w-[41.9%] h-[45%] pt-20 sticky top-0 relative z-20 mb-10"> 
+          <p className="f4 text-[1.1rem]   leading-[1.8rem] text-white">
+          ZeroLag is a decentralized Discipline-as-a-Service platform that turns goals into results. Set your targets, stake tokens for accountability, and earn $ZLAG rewards and dynamic NFTs for completing tasks. Miss a goal? Your stake fuels the ecosystem, boosting collective commitment.
           </p>
 
-          <h1 className="f5 text-[3.8rem] mt-5 leading-[4.3rem] font-bold text-white">
+          <h1 className="f5 text-[3.8rem] mt-10 leading-[4.3rem] font-bold text-white">
             Web3-Discipline AI Driven Growth
           </h1>
 
@@ -189,9 +182,9 @@ const ThirdTest = () => {
             className="step-1 w-[460px] origin-center ml-3 transition-all pt-4 flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
           >
             <InsideAbout
-              mainText={"Step 1: Define & Secure Your Ambition"}
+              mainText={"Define & Secure Your Ambition"}
               para={
-                "You choose your task and decide on an accountability reserve a chosen amount of $ZLAG tokens that you designate for success within a smart contract. This isn't just a transaction; it's a powerful pledge to yourself"
+                "You choose your task and lock a self-set amount of $ZLAG as an accountability reserve — a smart contract-backed pledge to your own success."
               }
               svg={
                 <img
@@ -226,9 +219,9 @@ const ThirdTest = () => {
             className="step-2 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
           >
             <InsideAbout
-              mainText={"Step 2: Act & Prove Your Progress"}
+              mainText={"Act & Prove Your Progress"}
               para={
-                "Stay consistent and complete your task within the deadline. Then, submit verifiable proof – such as text, files, images, or URLs – to confirm your successful completion, all through our intuitive interface."
+                "Stay consistent, finish your task on time, and submit proof—text, files, images, or links—through our simple interface."
               }
               svg={
                 <img
@@ -263,7 +256,7 @@ const ThirdTest = () => {
             className="step-3 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
           >
             <InsideAbout
-              mainText={"Step 3: Smart AI Verification"}
+              mainText={"Smart AI Verification"}
               para={
                 "AI validates the submitted proof against task requirements.Success: Locked $ZLAG is unlocked. Failure: Tokens are burned as a penalty."
               }
@@ -299,9 +292,9 @@ const ThirdTest = () => {
             className="step-4 w-[460px] mt-8 origin-center ml-3  transition-all  pt-4  flex justify-between gap-4 px-10 border border-white/30 h-[15.5%] relative"
           >
             <InsideAbout
-              mainText={"Step 4: Earn Rewards & Forge Your Legacy "}
+              mainText={"Earn Rewards & Forge Your Legacy "}
               para={
-                "On successful AI verification, you receive your unlocked $ZLAG and earn a unique NFT – a dynamic digital asset symbolizing your accomplishment and unwavering consistency. This is your Chain of Accomplishment"
+                "Upon AI verification, you reclaim your $ZLAG and earn a dynamic NFT—your symbol of success and consistency in the Chain of Accomplishment"
               }
               svg={
                 <img

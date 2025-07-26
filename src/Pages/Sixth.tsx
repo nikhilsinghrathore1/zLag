@@ -452,16 +452,22 @@ const Sixth = () => {
       </div>
 
       {/* Enhanced Cosmic Footer */}
-      <footer className='footer-container backdrop-blur-md' style={{
+      <footer className='footer-container backdrop-blur-md relative overflow-hidden' style={{
         backgroundImage: 'url("/cosmic-nebula.jpg"), linear-gradient(180deg, rgba(5, 1, 10, 0) 0%, rgba(10, 6, 36, 0.9) 10%, #0A0624 25%, #16213e 45%, #0f3460 65%, #1a1a2e 80%, #2a2a4e 95%, #000000 100%)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}>
+        {/* Background blur overlay */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-black/20"></div>
+        
+        {/* Additional blur layer for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/50"></div>
+
         {/* Footer cosmic background effects */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
-            className="absolute w-[300%] sm:w-[250%] md:w-[300%] h-12 sm:h-16 md:h-20 bg-gradient-to-r from-transparent via-teal-400/10 to-transparent"
+            className="absolute w-[300%] sm:w-[250%] md:w-[300%] h-12 sm:h-16 md:h-20 bg-gradient-to-r from-transparent via-teal-400/10 to-transparent backdrop-blur-sm"
             style={{
               top: '40%',
               left: '-100%',
@@ -470,7 +476,7 @@ const Sixth = () => {
             }}
           />
           <div 
-            className="absolute w-[250%] sm:w-[200%] md:w-[250%] h-10 sm:h-12 md:h-16 bg-gradient-to-r from-transparent via-purple-400/8 to-transparent"
+            className="absolute w-[250%] sm:w-[200%] md:w-[250%] h-10 sm:h-12 md:h-16 bg-gradient-to-r from-transparent via-purple-400/8 to-transparent backdrop-blur-sm"
             style={{
               top: '70%',
               right: '-80%',
@@ -480,26 +486,28 @@ const Sixth = () => {
           />
         </div>
 
-        <div className='footer-content relative z-10'>
+        <div className='footer-content relative z-20'>
           {/* Main Footer Content */}
           <div className='footer-grid'>
             {/* Brand Section */}
             <div className='footer-brand'>
               <h2 className='text-white f4' style={{
-                textShadow: '0 0 20px rgba(108, 61, 211, 0.6)'
+                textShadow: '0 0 20px rgba(108, 61, 211, 0.6), 0 2px 4px rgba(0,0,0,0.8)'
               }}>ZeroLag</h2>
-              <p className='text-cyan-200/80 f2 leading-relaxed'>
+              <p className='text-cyan-200/90 f2 leading-relaxed' style={{
+                textShadow: '0 1px 3px rgba(0,0,0,0.7)'
+              }}>
                 Discipline is the new currency of success. Transform your daily habits into valuable assets with Web3-powered accountability.
               </p>
               {/* Social Links */}
               <div className='social-links'>
-                <a href='#' className='social-link bg-gradient-to-r from-teal-400/20 to-purple-400/20 border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
                   <span className='text-teal-400 text-sm'>𝕏</span>
                 </a>
-                <a href='#' className='social-link bg-gradient-to-r from-teal-400/20 to-purple-400/20 border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
                   <span className='text-teal-400 text-sm'>📱</span>
                 </a>
-                <a href='#' className='social-link bg-gradient-to-r from-teal-400/20 to-purple-400/20 border border-teal-400/30 hover:border-teal-400/60 transition-all duration-300 hover:scale-110'>
+                <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
                   <span className='text-teal-400 text-sm'>💬</span>
                 </a>
               </div>
@@ -508,42 +516,42 @@ const Sixth = () => {
             {/* Platform Links */}
             <div className='footer-section'>
               <h3 className='text-teal-200 font-semibold f4' style={{
-                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Platform</h3>
               <ul>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>How it Works</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>NFT Rewards</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>$ZLAG Token</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Staking System</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>AI Verification</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>How it Works</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>NFT Rewards</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>$ZLAG Token</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Staking System</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>AI Verification</a></li>
               </ul>
             </div>
 
             {/* Community Links */}
             <div className='footer-section'>
               <h3 className='text-teal-200 font-semibold f4' style={{
-                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Community</h3>
               <ul>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Discord</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Telegram</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Twitter</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Medium</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>GitHub</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Discord</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Telegram</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Twitter</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Medium</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>GitHub</a></li>
               </ul>
             </div>
 
             {/* Resources Links */}
             <div className='footer-section'>
               <h3 className='text-teal-200 font-semibold f4' style={{
-                textShadow: '0 0 10px rgba(20, 184, 166, 0.4)'
+                textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Resources</h3>
               <ul>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Documentation</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Whitepaper</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Roadmap</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Privacy Policy</a></li>
-                <li><a href='#' className='text-cyan-200/70 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block'>Terms of Service</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Documentation</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Whitepaper</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Roadmap</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Privacy Policy</a></li>
+                <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>Terms of Service</a></li>
               </ul>
             </div>
           </div>
@@ -554,12 +562,12 @@ const Sixth = () => {
           {/* Bottom Footer */}
           <div className='footer-bottom'>
             <div>
-              <p className='text-cyan-200/70 f2'> 2024 ZeroLag. All rights reserved.</p>
-              <p className='text-purple-200/60 f2' style={{
-                textShadow: '0 0 8px rgba(255, 79, 216, 0.3)'
+              <p className='text-cyan-200/80 f2' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}> 2024 ZeroLag. All rights reserved.</p>
+              <p className='text-purple-200/70 f2' style={{
+                textShadow: '0 0 8px rgba(255, 79, 216, 0.3), 0 1px 3px rgba(0,0,0,0.7)'
               }}>"Fuel your flame, earn your chain"</p>
             </div>
-            <div className='text-cyan-200/60 f2'>
+            <div className='text-cyan-200/70 f2' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>
               <span>Built on </span>
               <span className='text-teal-400 font-semibold'>Web3</span>
               <span> Powered by </span>
@@ -568,9 +576,9 @@ const Sixth = () => {
           </div>
         </div>
 
-        {/* Cosmic glow effects - responsive sizing */}
-        <div className='absolute bottom-0 left-1/4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-teal-400/5 rounded-full blur-3xl'></div>
-        <div className='absolute top-1/2 right-1/4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-purple-400/5 rounded-full blur-2xl'></div>
+        {/* Enhanced cosmic glow effects with blur */}
+        <div className='absolute bottom-0 left-1/4 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-teal-400/8 rounded-full blur-3xl backdrop-blur-sm'></div>
+        <div className='absolute top-1/2 right-1/4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-purple-400/8 rounded-full blur-2xl backdrop-blur-sm'></div>
       </footer>
     </>
   )

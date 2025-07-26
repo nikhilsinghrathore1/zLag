@@ -134,7 +134,7 @@ const Fifth = () => {
 
       <div
         ref={mainRef}
-        className="w-full px-14 -mt-[300vh] h-[180vh] relative pt-40 overflow-hidden"
+        className="w-full px-14 -mt-[300vh] h-fit relative pt-40 overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #0A0624 0%, #16213e 25%, #0f3460 50%, #1a1a2e 75%, #0A0624 100%)'
         }}
