@@ -336,55 +336,139 @@ const Fourth = () => {
             }}
           ></div>
         </div>
-        <div
-          className="w-full h-full relative flex-shrink-0 p-10"
-          style={{ backgroundColor: "rgb(14, 23, 28)" }}
-        >
-          <div className="w-full flex justify-start b h-[30%] pl-10">
-            <p
-              className="w-[19%] font-semibold text-[17px] tracking-tight leading-[30px]"
-              style={{ color: "rgb(238, 241, 242)" }}
-            >
-              ZeroLag offers an intuitive and straightforward interface to
-              manage your tasks and track progress
-            </p>
-          </div>
-          <div className="w-[45%] h-[70%] absolute top-[25%] left-[25%] text-center ">
-            <div className="text-[10rem] text-center w-full rounded-xl overflow-hidden h-[40vh] leading-none font-semibold f5 mb-5 ">
-              <img
-                className="w-full h-full object-cover items-start"
-                src={dashboardimg}
-                alt=""
-              />
-            </div>
-            <div className=" text-center text-[2.5rem] w-full  f3 leading-[3.5rem]">
-              {" "}
-              <p style={{ color: "rgb(194, 206, 214)" }}>Expert in tech.</p>
-            </div>
+        <div className="w-full h-full flex-shrink-0 relative bg-gradient-to-br from-[#0c0c1e] via-[#151530] to-[#0c0c1e] overflow-hidden font-['Poppins',sans-serif]">
+          {/* Animated Background Particles */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 50 }, (_, i) => {
+              const x = Math.random() * 100;
+              const y = Math.random() * 100;
+              return (
+                <div key={i} className="absolute">
+                  <div
+                    className="w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      boxShadow: "0 0 6px #00ffff",
+                    }}
+                  />
+                  {i < 20 && (
+                    <svg
+                      className="absolute -translate-x-1/2 -translate-y-1/2 opacity-30"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                      }}
+                      width="100"
+                      height="100"
+                    >
+                      <line
+                        x1="0"
+                        y1="0"
+                        x2={Math.cos(i) * 50 + 50}
+                        y2={Math.sin(i) * 50 + 50}
+                        stroke="url(#gradient)"
+                        strokeWidth="1"
+                      />
+                      <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#00ff88" />
+                          <stop offset="100%" stopColor="#00ffff" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
-          <div className="w-[25rem] h-[25rem] absolute top-[55%] left-[10%] ">
-            <img
-              className="w-full h-full object-cover"
-              src="https://cdn.prod.website-files.com/659dbdfd5a080be8d3483164/65ea1b841fcd9f50115dbe9c_RocketLaunch.webp"
-              alt="not showing"
-            />
+          {/* Main Content */}
+          <div className="relative z-10 container mx-auto px-6 py-8">
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-100px)]">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <h2 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Effortless Discipline.
+                    <br />
+                    <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+                      Intuitive Control.
+                    </span>
+                  </h2>
+
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-gray-300">
+                    Manage Your Goals. Master Your Progress.
+                  </h3>
+
+                  <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                    ZeroLag provides a sleek, user-friendly interface designed for your success. Seamlessly manage tasks,
+                    track progress in real time, and gain insights into your accountability journey. We've engineered
+                    simplicity, so you can focus purely on achieving your goals.
+                  </p>
+                </div>
+
+                {/* CTA Button */}
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-green-400 to-cyan-400 rounded-lg font-semibold text-black text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,136,0.5)] focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                  <span className="relative z-10">Get Started</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-cyan-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              </div>
+
+              {/* Right Content - PC Screen Mockup */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  {/* Floating Animation Container */}
+                  <div className="animate-[float_6s_ease-in-out_infinite]">
+                    {/* Monitor Frame */}
+                    <div className="relative">
+                      {/* Monitor Screen */}
+                      <div className="w-[600px] h-[400px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-t-2xl p-4 shadow-[0_0_50px_rgba(0,255,255,0.3)] border-2 border-cyan-400/30">
+                        {/* Screen Content - Dashboard Image */}
+                        <div className="w-full h-full rounded-xl overflow-hidden bg-white">
+                          <img
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-07-19%20194632-pmSDt0iSUeMYGav3l6dNjADABTEcp7.png"
+                            alt="ZeroLag Dashboard Interface"
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Monitor Stand */}
+                      <div className="relative">
+                        {/* Monitor Base */}
+                        <div className="w-32 h-8 bg-gradient-to-r from-gray-700 to-gray-600 rounded-lg mx-auto shadow-lg" />
+                        {/* Monitor Neck */}
+                        <div className="w-4 h-12 bg-gradient-to-b from-gray-600 to-gray-700 mx-auto -mt-2 rounded-b-lg" />
+                      </div>
+                    </div>
+
+                    {/* Glow Effects */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-green-400/20 rounded-t-2xl blur-xl -z-10" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Tagline */}
+            <footer className="text-center mt-16">
+              <p className="text-xl text-gray-300 font-semibold">
+                Built with Precision.{" "}
+                <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+                  Powered by Experts.
+                </span>
+              </p>
+            </footer>
           </div>
 
-          <div className="w-[17rem] h-[17rem] absolute  -top-[15%] left-[50%] ">
-            <img
-              className="w-full h-full object-cover"
-              src="https://cdn.prod.website-files.com/659dbdfd5a080be8d3483164/65ea1b924ee31caf14d64b2a_TreeStructure.webp"
-              alt="not showing"
-            />
-          </div>
-          <div className="w-[22rem] h-[22rem] absolute top-[20%] left-[70%] ">
-            <img
-              className="w-full h-full object-cover"
-              src="https://cdn.prod.website-files.com/659dbdfd5a080be8d3483164/65ea1ba6eb9637155282b42f_Lightning.webp"
-              alt="not showing"
-            />
-          </div>
+          {/* Custom Animations */}
+          <style jsx>{`
+            @keyframes float {
+              0%, 100% { transform: translateY(0px) rotate(12deg); }
+              50% { transform: translateY(-20px) rotate(12deg); }
+            }
+          `}</style>
         </div>
         <div
           className="w-full h-full overflow-hidden flex items-center justify-center flex-shrink-0 relative"
