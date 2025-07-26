@@ -618,7 +618,28 @@ const Landing = () => {
         {/* nav bar  */}
         <div className='w-full tracking-wide f8 text-[9.5px] uppercase h-[58px] rounded-xl bg-gray-800/50 backdrop-blur-sm flex border border-gray-700'>
           {[1, 2, 3, 4, 5, 6].map((e, i) =>
-            <div key={i} className={`w-[16.71%] pl-[14px] h-full flex items-center ${e === 6 ? "" : "border-r-[1px] border-green-400/30"} `}>
+            <div 
+              key={i} 
+              className={`w-[16.71%] pl-[14px] h-full flex items-center transition-colors duration-200 ${
+                e <= 4 
+                  ? 'cursor-pointer hover:bg-green-400/10 hover:text-green-300' 
+                  : 'cursor-not-allowed opacity-60'
+              } ${e === 6 ? "" : "border-r-[1px] border-green-400/30"} `}
+              onClick={() => {
+                if (e <= 4) {
+                  // Navigate to corresponding chapter in Fourth.tsx
+                  console.log(`Navigating to Chapter ${e}`);
+                  if ((window as any).navigateToChapter) {
+                    (window as any).navigateToChapter(e);
+                  } else {
+                    console.warn('Navigation function not available yet');
+                  }
+                } else {
+                  console.log(`Chapter ${e === 6 ? 'Final' : e} - Navigation not implemented`);
+                }
+              }}
+              title={e <= 4 ? `Click to navigate to Chapter ${e}` : 'Navigation not available'}
+            >
               {e === 6 ? 'Final' : `Chapter 0${e}`}
             </div>
           )}

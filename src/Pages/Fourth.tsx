@@ -26,11 +26,50 @@ const Fourth = () => {
     };
   }, []);
 
-  const MainDivRef = useRef(null);
-  const SlidingWindow = useRef(null);
+  const MainDivRef = useRef<HTMLDivElement>(null);
+  const SlidingWindow = useRef<HTMLDivElement>(null);
   const firstcircle = useRef(null);
+  
+  // Chapter ref for navigation
+  const chapter1Ref = useRef(null);
 
   // const {setState} = useContext(infoContext)
+  
+  // Chapter navigation function
+  const navigateToChapter = (chapterNumber: number) => {
+    if (!loaded || !SlidingWindow.current) return;
+    
+    // Kill any existing animations on the sliding window
+    gsap.killTweensOf(SlidingWindow.current);
+    
+    // Calculate target position (each screen is 100% width)
+    const targetX = -(chapterNumber - 1) * 100;
+    
+    // Animate to the target chapter
+    gsap.to(SlidingWindow.current, {
+      x: `${targetX}%`,
+      duration: 1.2,
+      ease: "power2.inOut",
+      overwrite: true
+    });
+    
+    // Also scroll to the Fourth component section if not already there
+    const fourthSection = MainDivRef.current;
+    if (fourthSection) {
+      fourthSection.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
+  
+  // Expose navigation function globally for chapter buttons
+  useEffect(() => {
+    (window as any).navigateToChapter = navigateToChapter;
+    return () => {
+      delete (window as any).navigateToChapter;
+    };
+  }, [loaded]);
 
   useEffect(() => {
     if (loaded) {
@@ -68,7 +107,7 @@ const Fourth = () => {
         ref={SlidingWindow}
         className="w-full flex  flex-nowrap h-[100vh] sticky top-0 "
       >
-        <div className="w-full flex items-center relative justify-center h-full flex-shrink-0">
+        <div ref={chapter1Ref} className="w-full flex items-center relative justify-center h-full flex-shrink-0">
           {/* Background Image */}
           <div
             className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
