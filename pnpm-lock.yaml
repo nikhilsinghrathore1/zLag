@@ -11,11 +11,14 @@ importers:
       '@gsap/react':
         specifier: ^2.1.1
         version: 2.1.2(gsap@3.13.0)(react@18.3.1)
+      '@tabler/icons-react':
+        specifier: ^3.34.1
+        version: 3.34.1(react@18.3.1)
       framer-motion:
         specifier: ^11.3.12
         version: 11.18.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gsap:
-        specifier: ^3.12.5
+        specifier: ^3.13.0
         version: 3.13.0
       locomotive-scroll:
         specifier: ^5.0.0-beta.21
@@ -509,6 +512,14 @@ packages:
 
   '@standard-schema/utils@0.3.0':
     resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+
+  '@tabler/icons-react@3.34.1':
+    resolution: {integrity: sha512-Ld6g0NqOO05kyyHsfU8h787PdHBm7cFmOycQSIrGp45XcXYDuOK2Bs0VC4T2FWSKZ6bx5g04imfzazf/nqtk1A==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.34.1':
+    resolution: {integrity: sha512-9gTnUvd7Fd/DmQgr3MKY+oJLa1RfNsQo8c/ir3TJAWghOuZXodbtbVp0QBY2DxWuuvrSZFys0HEbv1CoiI5y6A==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1986,6 +1997,13 @@ snapshots:
   '@standard-schema/spec@1.0.0': {}
 
   '@standard-schema/utils@0.3.0': {}
+
+  '@tabler/icons-react@3.34.1(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.34.1
+      react: 18.3.1
+
+  '@tabler/icons@3.34.1': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
