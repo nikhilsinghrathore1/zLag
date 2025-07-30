@@ -16,8 +16,8 @@
 //     });
 //   };
 
-//   useEffect(() => {
-//     const canvas = canvasRef.current;
+//   useEffect(() => {  
+//     const canvas = canvasRef.current; 
 //     const input = inputRef.current;
 //     const ctx = canvas.getContext("2d");
 //     let mouse = { x: 0, y: 0 };

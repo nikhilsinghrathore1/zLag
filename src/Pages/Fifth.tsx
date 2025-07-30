@@ -1,17 +1,19 @@
 import gsap from "gsap"
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
+
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts"
 import { TrendingUp, Flame, Users, Coins, BarChart3 } from "lucide-react"
 
 // Mock chart data
 const chartData = [
-  { time: "00:00", price: 0.045, burn: 15, adoption: 25 },
-  { time: "04:00", price: 0.052, burn: 18, adoption: 32 },
-  { time: "08:00", price: 0.048, burn: 22, adoption: 28 },
-  { time: "12:00", price: 0.067, burn: 25, adoption: 45 },
-  { time: "16:00", price: 0.078, burn: 30, adoption: 52 },
-  { time: "20:00", price: 0.089, burn: 35, adoption: 58 },
-  { time: "24:00", price: 0.095, burn: 40, adoption: 65 },
+  { time: "00:00", price: 0.045, adoption: 25 },
+  { time: "04:00", price: 0.052, adoption: 32 },
+  { time: "08:00", price: 0.048, adoption: 28 },
+  { time: "12:00", price: 0.067, adoption: 45 },
+  { time: "16:00", price: 0.078, adoption: 52 },
+  { time: "20:00", price: 0.089, adoption: 58 },
+  { time: "24:00", price: 0.095, adoption: 65 },
 ]
 
 function FloatingCoin() {
@@ -19,9 +21,9 @@ function FloatingCoin() {
     <div className="relative flex items-center justify-center h-full">
       <div className="animate-float">
         <img
-          src="/coinhehe.png"
+          src="/coinhehe.jpg"
           alt="$ZLAG Coin"
-          className="w-64 h-64 object-contain drop-shadow-2xl"
+          className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain drop-shadow-2xl"
           style={{
             filter: "drop-shadow(0 0 30px rgba(255, 136, 0, 0.5))",
           }}
@@ -134,7 +136,7 @@ const Fifth = () => {
 
       <div
         ref={mainRef}
-        className="w-full px-14 -mt-[300vh] h-fit relative pt-40 overflow-hidden"
+        className="w-full px-4 sm:px-8 md:px-12 lg:px-14 -mt-[300vh] h-fit relative pt-20 sm:pt-32 overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #0A0624 0%, #16213e 25%, #0f3460 50%, #1a1a2e 75%, #0A0624 100%)'
         }}
@@ -154,15 +156,15 @@ const Fifth = () => {
         <div className="absolute inset-0 bg-black/40" />
         <ParticleField />
 
-        <div className="relative z-10 container mx-auto px-6 py-8">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
             {/* Left Section */}
             <div className="space-y-8">
               {/* 3D Coin Section */}
               <div className="relative h-96 bg-black/30 backdrop-blur-sm rounded-3xl border border-green-500/30 overflow-hidden shadow-2xl shadow-green-500/20">
                 {/* Text content at the top */}
                 <div className="absolute top-0 left-0 right-0 text-center p-6 z-20">
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent mb-2">
                     Why $ZLAG is Ready to Moon 🔥
                   </h1>
                   <p className="text-gray-200 text-sm">
@@ -179,7 +181,7 @@ const Fifth = () => {
                 <div className="absolute bottom-4 left-0 right-0 text-center z-20">
                   <div className="inline-block bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-1 rounded-full text-white text-sm font-semibold animate-pulse shadow-lg shadow-green-500/30">
                     <Flame className="inline w-3 h-3 mr-1" />
-                    ZLAG BURN RATE: LIVE
+                    ZLAG RATE: LIVE
                   </div>
                 </div>
               </div>
@@ -218,11 +220,11 @@ const Fifth = () => {
             {/* Right Section */}
             <div className="space-y-6">
               {/* Chart Section */}
-              <div className="bg-black/40 backdrop-blur-sm border border-green-500/30 rounded-3xl p-6 shadow-2xl shadow-green-500/20">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-2xl font-bold text-white">Live Performance</h2>
-                  <div className="flex gap-2">
-                    {["price", "burn", "adoption"].map((type) => (
+                <div className="bg-black/40 backdrop-blur-sm border border-green-500/30 rounded-3xl p-6 shadow-2xl shadow-green-500/20">
+                <div className="flex flex-wrap justify-between items-center mb-6 gap-2">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Live Performance</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {["price", "adoption"].map((type) => (
                       <button
                         key={type}
                         onClick={() => setActiveChart(type)}
@@ -238,7 +240,7 @@ const Fifth = () => {
                   </div>
                 </div>
 
-                <div className="h-64">
+                <div className="h-52 sm:h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={chartData}>
                       <XAxis
@@ -251,7 +253,7 @@ const Fifth = () => {
                       <Line
                         type="monotone"
                         dataKey={activeChart}
-                        stroke={activeChart === "price" ? "#00ff88" : activeChart === "burn" ? "#ffaa00" : "#00ccff"}
+                        stroke={activeChart === "price" ? "#00ff88" : "#00ccff"}
                         strokeWidth={3}
                         dot={{ fill: "#00ff88", strokeWidth: 2, r: 4 }}
                         activeDot={{ r: 6, stroke: "#00ff88", strokeWidth: 2 }}
@@ -264,7 +266,7 @@ const Fifth = () => {
                 <div className="flex justify-around mt-4 text-sm">
                   <div className="text-center">
                     <div className="w-2 h-2 bg-green-400 rounded-full mx-auto mb-1 animate-pulse"></div>
-                    <span className="text-gray-300">Supply Burn %</span>
+                    <span className="text-gray-300">Supply demand %</span>
                   </div>
                   <div className="text-center">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mx-auto mb-1 animate-pulse"></div>
@@ -281,7 +283,7 @@ const Fifth = () => {
               <div className="bg-black/40 backdrop-blur-sm border border-green-500/30 rounded-3xl p-6 shadow-2xl shadow-green-500/20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   {[
-                    { label: "$ZLAG Burned", value: "230,000+", color: "text-orange-400" },
+                    { label: "$ZLAG Rewarded", value: "230,000+", color: "text-orange-400" },
                     { label: "Total Holders", value: "8.5K+", color: "text-green-400" },
                     { label: "Tasks Completed", value: "25,000+", color: "text-cyan-400" },
                   ].map((stat, i) => (
@@ -314,7 +316,7 @@ const Fifth = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="gap-4 sm:gap-6">
               {/* Utility-Packed */}
               <div className="bg-black/40 backdrop-blur-sm border border-green-500/20 rounded-xl p-6 hover:border-green-400/40 transition-all duration-300">
                 <div className="flex items-start gap-4">
@@ -339,7 +341,7 @@ const Fifth = () => {
                   <div>
                     <h3 className="text-lg font-bold text-white mb-2">Deflationary</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Token burns from missed tasks increase scarcity and value.
+                      Token from missed tasks increase scarcity and value.
                     </p>
                   </div>
                 </div>
@@ -352,7 +354,7 @@ const Fifth = () => {
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">Growth-Driven</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Growth-Driven</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       Your consistency fuels the strength and price of $ZLAG.
                     </p>
@@ -384,7 +386,7 @@ const Fifth = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">Self-Sustaining Economy</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Self-Sustaining Economy</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       Smart contracts and AI ensure fairness and continuous growth.
                     </p>
@@ -401,7 +403,7 @@ const Fifth = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">Your Habits = Assets</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Your Habits = Assets</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       Turn daily discipline into real on-chain wealth.
                     </p>
@@ -417,7 +419,7 @@ const Fifth = () => {
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-white mb-2">Community Momentum</h3>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2">Community Momentum</h3> 
                   <p className="text-gray-300 text-sm leading-relaxed">
                     A rapidly growing validator and user base powers future gains. Join thousands of disciplined individuals building wealth through consistency.
                   </p>

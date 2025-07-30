@@ -1,5 +1,8 @@
 import gsap from 'gsap/all'
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from "react";
+import { IconBrandX, IconPhone, IconMessageCircle } from "@tabler/icons-react"; 
+import { useEffect, useRef, useState } from "react";
+
 // Image referenced directly from public folder
 
 const Sixth = () => {
@@ -15,14 +18,14 @@ const Sixth = () => {
     if (document.readyState === 'complete') {
       setLoaded(true);
     } else {
-      window.addEventListener('load', handleLoad);
+      window.addEventListener('load', handleLoad); 
     }
 
     return () => {
       window.removeEventListener('load', handleLoad);
     };
   }, []);
-
+ 
   // const {setState} = useContext(infoContext)
 
   useEffect(() => {
@@ -503,13 +506,13 @@ const Sixth = () => {
               {/* Social Links */}
               <div className='social-links'>
                 <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
-                  <span className='text-teal-400 text-sm'>𝕏</span>
+                  <IconBrandX className='text-teal-400 text-sm' />
                 </a>
                 <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
-                  <span className='text-teal-400 text-sm'>📱</span>
+                  <IconPhone className='text-teal-400 text-sm' />
                 </a>
                 <a href='#' className='social-link bg-gradient-to-r from-teal-400/30 to-purple-400/30 border border-teal-400/40 hover:border-teal-400/70 transition-all duration-300 hover:scale-110 backdrop-blur-sm'>
-                  <span className='text-teal-400 text-sm'>💬</span>
+                  <IconMessageCircle className='text-teal-400 text-sm' />
                 </a>
               </div>
             </div>
@@ -519,7 +522,7 @@ const Sixth = () => {
               <h3 className='text-teal-200 font-semibold f4' style={{
                 textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Platform</h3>
-              <ul>
+              <ul className='space-y-0'>
                 <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>How it Works</a></li>
                 <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>NFT Rewards</a></li>
                 <li><a href='#' className='text-cyan-200/80 hover:text-teal-400 transition-colors duration-300 hover:translate-x-1 inline-block' style={{textShadow: '0 1px 2px rgba(0,0,0,0.6)'}}>$ZLAG Token</a></li>
@@ -529,7 +532,7 @@ const Sixth = () => {
             </div>
 
             {/* Community Links */}
-            <div className='footer-section'>
+            <div className='footer-section hidden sm:block'>
               <h3 className='text-teal-200 font-semibold f4' style={{
                 textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Community</h3>
@@ -543,7 +546,7 @@ const Sixth = () => {
             </div>
 
             {/* Resources Links */}
-            <div className='footer-section'>
+            <div className='footer-section hidden sm:block'>
               <h3 className='text-teal-200 font-semibold f4' style={{
                 textShadow: '0 0 10px rgba(20, 184, 166, 0.4), 0 1px 3px rgba(0,0,0,0.8)'
               }}>Resources</h3>

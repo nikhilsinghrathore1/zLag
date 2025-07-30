@@ -1,7 +1,9 @@
 // import { useGSAP } from '@gsap/react';
 // import {  motion } from 'framer-motion'
 import gsap, { ScrollTrigger } from 'gsap/all';
-import React, { useEffect, useRef, useState } from 'react'
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
+
 import Marquee from '../components/Marquee';
 
 
@@ -16,7 +18,7 @@ import Marquee from '../components/Marquee';
 
 const Landing = () => {
 
-  const [loaded, setloaded] = useState(false)
+  const [loaded, setloaded] = useState(false) 
 
   useEffect(() => {
     const handleLoad = () => {
@@ -289,7 +291,7 @@ const Landing = () => {
     }
 
     // Initialize blur text animations (run only once)
-    const text1 = "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."
+    const text1 = "ZEROLAG.\nTHE AI DISCIPLINE ENGINE.\nBreak deadlines. Not promises.\n⛓ Real crypto lock-ins.\n Instant burn on failure.\n AI watches. You move."
     const text2 = "WHY ZEROLAG? Break free from procrastination. Our daily commitment loop, powered by real crypto stakes and loss aversion, guarantees motivation. Missed tasks burn crypto; completed ones earn rewards and NFTs, turning discipline into powerful, lasting habits."
     const text3 = "ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete them to earn back your stake, dynamic NFTs, and $ZLAG rewards. Fail, and your stake is burned. Powered by AI, ZeroLag gamifies habit-building with real financial accountability."
 
@@ -334,9 +336,9 @@ const Landing = () => {
         // filter: 'blur(8px) brightness(1.5) saturate(1.3)' - removed for testing
       }}>
         <img 
-          src="./zlag_token.png"
+          src="./zlag_token.jpg"
           alt="ZLAG Token"
-          className="absolute w-[200px] h-[200px] object-contain border-4 border-red-500"
+          className="absolute w-32 sm:w-48 md:w-64 object-contain border-4 border-red-500"
           style={{
             top: '10%',
             left: '10%',
@@ -347,7 +349,7 @@ const Landing = () => {
           onError={(e) => console.error('Failed to load ZLAG token image:', e)}
         />
         <div 
-          className="absolute w-[200px] h-[200px] border-4 border-blue-500 bg-blue-500"
+          className="absolute w-32 sm:w-48 md:w-64 border-4 border-blue-500 bg-blue-500"
           style={{
             top: '10%',
             right: '10%',
@@ -357,9 +359,9 @@ const Landing = () => {
           <span className="text-white p-4">TEST DIV - Should be visible</span>
         </div>
         <img 
-          src="/zlag_token.png"
+          src="/zlag_token.jpg"
           alt="ZLAG Token"
-          className="absolute w-[400px] h-[400px] object-contain"
+          className="absolute w-32 sm:w-48 md:w-64 h-[400px] object-contain"
           style={{
             top: '40%',
             right: '5%',
@@ -367,7 +369,7 @@ const Landing = () => {
           }}
         />
         <img 
-          src="/zlag_token.png"
+          src="/zlag_token.jpg"
           alt="ZLAG Token"
           className="absolute w-[350px] h-[350px] object-contain"
           style={{
@@ -378,9 +380,9 @@ const Landing = () => {
           }}
         />
         <img 
-          src="/zlag_token.png"
+          src="/zlag_token.jpg"
           alt="ZLAG Token"
-          className="absolute w-[300px] h-[300px] object-contain"
+          className="absolute w-32 sm:w-48 md:w-64 h-[300px] object-contain"
           style={{
             top: '60%',
             left: '20%',
@@ -427,7 +429,7 @@ const Landing = () => {
         <div className="absolute inset-0">
           {/* ZLAG Token - Top Right */}
           <img 
-            src="/zlag_token.png"
+            src="/zlag_token.jpg"
             alt="ZLAG Token"
             className="absolute w-32 h-32 object-contain opacity-90"
             style={{
@@ -440,7 +442,7 @@ const Landing = () => {
           
           {/* Timer Icon - Left Side */}
           <img 
-            src="/timer-icon.png"
+            src="/timer-icon.jpg"
             alt="Timer Icon"
             className="absolute w-28 h-28 object-contain opacity-85"
             style={{
@@ -453,7 +455,7 @@ const Landing = () => {
           
           {/* Lock Icon - Bottom Right */}
           <img 
-            src="/lock-icon.png"
+            src="/lock-icon.jpg"
             alt="Lock Icon"
             className="absolute w-30 h-30 object-contain opacity-80"
             style={{
@@ -466,7 +468,7 @@ const Landing = () => {
           
           {/* Additional ZLAG Token - Bottom Left */}
           <img 
-            src="/zlag_token.png"
+            src="/zlag_token.jpg"
             alt="ZLAG Token"
             className="absolute w-24 h-24 object-contain opacity-75"
             style={{
@@ -646,7 +648,8 @@ const Landing = () => {
         </div>
         
         {/* floating blue box */}
-        <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-[10.4%] right-[3%] w-[12.7%] h-[83px] bg-green-600 text-white rounded-md shadow-lg shadow-green-500/20 z-30'>
+        <div className='absolute flex flex-col justify-between uppercase f8 text-[11px] px-2 pt-[9px] pb-[6px] top-10 right-4 sm:right-6 md:right-12 w-[80%] sm:w-[50%] md:w-[30%] lg:w-[15%] 
+        h-[83px] bg-green-600 text-white rounded-md shadow-lg shadow-green-500/20 z-30'>
           <div className='w-[58%] leading-[0.75rem]'>
             <h1 ref={gameChangerTextRef}>
               {typeof showSymbols === 'string' ? showSymbols : (showSymbols === false ? 'trust us, it\'s a game changer!' : '')}
@@ -662,31 +665,59 @@ const Landing = () => {
         
         {/* this is the moving behind main text */}
         <div ref={mainTextRef} className='w-full uppercase pb-4 h-[84%] flex flex-col justify-end relative z-20'>
-          <div ref={unlockTextRef} className='w-full f6 text-[8rem] leading-none text-right text-white'>
+          <div ref={unlockTextRef} className='w-full f6 text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem]
+          leading-none text-right text-white'> 
             <h1>unlock your</h1>
           </div>
-          <div ref={productivityTextRef} className='w-full pr-[57px] f6 text-[8rem] leading-[9rem] text-right text-white'>
+          <div ref={productivityTextRef} className='w-full pr-[57px] f6 text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem]
+          leading-[9rem] text-right text-white'>
             <h1>productivity</h1>
           </div>
-          <div ref={aiToolsTextRef} className='w-full pr-[85px] f6 text-[8rem] leading-[9.5rem] text-right text-white'>
+          <div ref={aiToolsTextRef} className='w-full pr-[85px] f6 text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem]
+          leading-[9.5rem] text-right text-white'>
             <h1>with<span className='f7 border-[5px] pt-1 rounded-full px-[45px] border-green-400 text-green-400'>zerolag..</span></h1>
           </div>
         </div>
         
         {/* this is the floating opaque screen */}
-        <div ref={blurredDivRef} className='absolute uppercase text-[13px] w-[46.5%] f8 text-green-300 h-[84%] shadow-2xl shadow-black/30 py-4 pl-3 pr-14 rounded-xl top-[10.4%] bg-gray-800/20 backdrop-blur-md border border-gray-700/30 z-25'>
+        <div ref={blurredDivRef} className='absolute uppercase text-[14px] w-[90%] sm:w-[70%] md:w-[50%] f8 text-green-300 h-[84%] shadow-2xl shadow-black/30 py-4 px-4 sm:px-8 overflow-y-auto
+        rounded-xl top-[10.4%] bg-gray-800/20 backdrop-blur-md border border-gray-700/30 z-25'>
           <div className='w-full flex justify-between'>
-            <div className='w-[43%] leading-none'>
-              <p ref={blurParagraphRef1}>{blurText1 || "ZeroLag, the world's first AI-powered Discipline dApp, ends missed deadlines with real financial consequences and built-in accountability."}</p>
+            <div className='w-[43%] leading-1'>
+            <p ref={blurParagraphRef1}>
+  {blurText1 || (
+    <>
+      ZEROLAG<br />
+      THE AI DISCIPLINE ENGINE<br />
+      Break deadlines. Not promises<br />
+       Real crypto lock-ins<br />
+       Instant burn on failure<br />
+       AI watches. You move.
+    </>
+  )}
+</p>
+
             </div>
-            <div className='w-[45%] leading-none '>
-              <p ref={blurParagraphRef2}>
-                {blurText2 || "WHY USERS STICK TO ZEROLAG: DAILY COMMITMENT LOOP. LOSS AVERSION = MOTIVATION, FAILURE BURNS STAKE + BREAKS NFT STREAK."}
-              </p>
+            <div className='w-[45%] leading-1 '>
+            <p ref={blurParagraphRef2}>
+  {blurText2 || (
+    <>
+      WHY ZEROLAG?<br />
+       Procrastination is a loop.<br />
+       We break it with crypto.<br />
+       Loss = pain.<br />
+       Completion = rewards.<br />
+      No mercy. No excuses.<br />
+      Only habits.<br />
+      Fueled by AI.<br />
+      Forged by fire.
+    </>
+  )}
+</p>
             </div>
           </div>
           
-          <div className='leading-none mt-9'>
+          <div className='leading-1 mt-9'>
             <p ref={blurParagraphRef3}>{blurText3 || "ZeroLag is a decentralized Discipline-as-a-Service platform where users lock crypto to commit to daily tasks. Complete them to earn back your stake, dynamic NFTs, and $ZLAG rewards. Fail, and your stake is burned. Powered by AI, ZeroLag gamifies habit-building with real financial accountability."}</p>
           </div>
         </div>
@@ -753,7 +784,7 @@ const Landing = () => {
           
           {/* Additional glow orbs */}
           <img 
-            src="/lock-icon.png"
+            src="/lock-icon.jpg"
             alt="Lock Icon"
             className="absolute w-96 h-96 object-contain opacity-80"
             style={{
@@ -764,7 +795,7 @@ const Landing = () => {
             }}
           />
           <img 
-            src="/zlag_token.png"
+            src="/zlag_token.jpg"
             alt="ZLAG Token"
             className="absolute w-80 h-80 object-contain opacity-70"
             style={{
@@ -776,9 +807,9 @@ const Landing = () => {
           />
         </div>
 
-        <div ref={opacTextRef} className='w-full capitalize opacity-0 text-center f2 font-semibold text-[20.5px] leading-[10px] pt-[90px] tracking-wide relative z-20'>
-          <h1 className='mb-4'>Worlds First Ai Powered Disciplinary Dapp</h1>
-          <h1>fuel you flame earn your chain</h1>
+        <div ref={opacTextRef} className='w-full capitalize opacity-0 text-center f2 font-semibold leading-[10px] pt-[90px] tracking-wide relative z-20'>
+          <h1 className='mb-4 text-[20.5px] sm:text-[24px] md:text-[28px] lg:text-[27px]'>Worlds First Ai Powered Disciplinary Dapp</h1>
+          <h1 className='text-[20.5px] sm:text-[24px] md:text-[28px] lg:text-[27px]'>fuel you flame earn your chain</h1>
         </div>
 
         <div ref={behindRef} className='absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full whitespace-nowrap overflow-hidden z-15'>

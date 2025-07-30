@@ -1,8 +1,8 @@
 import React from 'react'
 // Images referenced directly from public folder
-const img1 = "/m1.jpeg"
-const img2 = "/marqueimg1.png"
-const img3 = "/marqueimg2.png"
+const img1 = "/m1.jpg"
+const img2 = "/marqueimg1.jpg"
+const img3 = "/marqueimg2.jpg"
 const img4 = "/marqueimg3.jpg"
 
 type marqueprop ={

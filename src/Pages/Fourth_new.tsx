@@ -1,5 +1,7 @@
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
+
 
 const Fourth = () => {
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +20,7 @@ const Fourth = () => {
     return () => window.removeEventListener("load", handleLoad);
   }, []);
 
-  const MainDivRef = useRef(null);
+  const MainDivRef = useRef(null); 
 
   useEffect(() => {
     if (loaded) {
@@ -84,21 +86,21 @@ const Fourth = () => {
 
             {/* Main Headlines */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight fade-in-left">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight fade-in-left">
                 Effortless Discipline.
               </h1>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight fade-in-left">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight fade-in-left">
                 Intuitive Control.
               </h1>
             </div>
 
             {/* Subheading */}
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium fade-in-left">
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 font-medium fade-in-left">
               Manage Your Goals. Master Your Progress.
             </h2>
 
             {/* Description */}
-            <p className="text-gray-400 text-lg leading-relaxed max-w-lg fade-in-left">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-full sm:max-w-md md:max-w-lg fade-in-left">
               ZeroLag provides a sleek, user-friendly interface designed for your success. Seamlessly manage all your tasks, track progress in real-time, and gain instant insight into your accountability journey. We've engineered simplicity, so you can focus purely on achieving your goals.
             </p>
           </div>
@@ -107,7 +109,7 @@ const Fourth = () => {
           <div className="flex justify-center lg:justify-end fade-in-right">
             <div className="relative">
               {/* Tablet Frame */}
-              <div className="relative w-80 md:w-96 lg:w-[420px] h-[500px] md:h-[600px] lg:h-[650px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-4 shadow-2xl">
+              <div className="relative w-64 sm:w-80 md:w-96 lg:w-[420px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-4 shadow-2xl">
                 {/* Screen glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-teal-500/20 rounded-3xl blur-xl"></div>
                 
@@ -185,7 +187,7 @@ const Fourth = () => {
 
         {/* Bottom Tagline */}
         <div className="text-center mt-16 lg:mt-24 fade-in-left">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             Built with Precision. Powered by Experts.
           </h3>
         </div>
