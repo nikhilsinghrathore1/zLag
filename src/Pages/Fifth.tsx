@@ -21,7 +21,7 @@ function FloatingCoin() {
     <div className="relative flex items-center justify-center h-full">
       <div className="animate-float">
         <img
-          src="/coinhehe.jpg"
+          src="/coinhehere.png"
           alt="$ZLAG Coin"
           className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain drop-shadow-2xl"
           style={{
