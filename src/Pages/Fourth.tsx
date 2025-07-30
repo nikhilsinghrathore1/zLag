@@ -77,8 +77,8 @@ const Fourth = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10" />
 
           <div className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[100px] leading-[105px] tracking-tight relative z-20 text-white font-bold text-center px-4">
-            <h1>Skip the Task,</h1>
-            <h1>your crytp commit</h1>
+            <h1>Fail to Deliver,</h1>
+            <h1>Forfeit Funds</h1>
           </div>
 
           <div
