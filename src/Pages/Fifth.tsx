@@ -326,7 +326,7 @@ const Fifth = () => {
                   <div>
                     <h3 className="text-lg font-bold text-white mb-2">Utility-Packed</h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Stake, earn bonuses, and unlock NFT rewards through real productivity.
+                      commit, earn bonuses, and unlock NFT rewards through real productivity.
                     </p>
                   </div>
                 </div>

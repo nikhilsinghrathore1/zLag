@@ -443,7 +443,7 @@ const Sixth = () => {
         </div>
 
         <p className='main-text f4'>{
-          "ZeroLag is more than just a platform — it's a movement, a revolution where discipline meets the power of Web3. We empower you to transform your daily habits into valuable assets, turning consistency and commitment into crypto rewards and personal growth. Through engaging gamified challenges, mental resilience training, and futuristic incentives, ZeroLag is designed to help you unlock your highest potential and stay ahead of the curve. Join us, stake your goals, and prove that discipline isn't just a mindset — it's the new currency of success. The future belongs to those who dare to build it, and with ZeroLag by your side, that future is yours to claim, shape, and own.".split("").map((e, index) => {
+          "ZeroLag is more than just a platform — it's a movement, a revolution where discipline meets the power of Web3. We empower you to transform your daily habits into valuable assets, turning consistency and commitment into crypto rewards and personal growth. Through engaging gamified challenges, mental resilience training, and futuristic incentives, ZeroLag is designed to help you unlock your highest potential and stay ahead of the curve. Join us, commit your goals, and prove that discipline isn't just a mindset — it's the new currency of success. The future belongs to those who dare to build it, and with ZeroLag by your side, that future is yours to claim, shape, and own.".split("").map((e, index) => {
           if (e == " ") {
             return <span key={index} className='inline-block'> &nbsp;</span>
           }

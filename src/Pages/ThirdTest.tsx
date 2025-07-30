@@ -118,7 +118,7 @@ const ThirdTest = () => {
 
         <div className="w-full md:w-[41.9%] pt-20 sticky md:top-0 z-20 mb-10">
           <p className="f4 text-[1.1rem] leading-[1.8rem] text-white">
-            ZeroLag is a decentralized Discipline-as-a-Service platform that turns goals into results. Set your targets, stake tokens for accountability, and earn $ZLAG rewards and dynamic NFTs for completing tasks. Miss a goal? Your stake fuels the ecosystem, boosting collective commitment.
+            ZeroLag is a decentralized Discipline-as-a-Service platform that turns goals into results. Set your targets, commit some tokens for accountability, and earn $ZLAG rewards and dynamic NFTs for completing tasks. Miss a goal? Your commitments fuels the ecosystem, boosting collective commitment.
           </p>
 
           <h1 className="f5 text-[3.8rem] mt-10 leading-[4.3rem] font-bold text-white">
